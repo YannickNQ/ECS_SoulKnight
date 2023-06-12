@@ -1,0 +1,2 @@
+D:\Cpp_GameDevelopment\libraries\GameWorkspace\Debug\bgi.exe
+D:\Cpp_GameDevelopment\ECS_SoulKnight\Debug\bgi.exe
