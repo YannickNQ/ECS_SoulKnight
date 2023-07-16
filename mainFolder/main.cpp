@@ -3,30 +3,48 @@
 //#include "Game.h"
 #include "Vec2.h"
 #include "Components.h"
+#include "EntityManager.h"
 
 #include <iostream>
 
 int main()
-{	
-	CShape* drawingShape = new CShape(5);
-	//Vec2* vector = new Vec2(100, 100);
+{	z
+    EntityManager entityManager;
 
-	
-	initwindow(600, 680, "Pruebas");
-	setfillstyle(SOLID_FILL, 8);
-	bar(0, 0, 600, 680);
+    // Agregar entidades al EntityManager
+    std::shared_ptr<Entity> entity1 = entityManager.addEntity("tag1");
+    std::shared_ptr<Entity> entity2 = entityManager.addEntity("tag2");
+    std::shared_ptr<Entity> entity3 = entityManager.addEntity("tag1");
 
-	drawingShape->knightRight(100, 100);
-	drawingShape->knightLeft(221, 100);
-	drawingShape->grandSlimeRight(342, 100);
-	drawingShape->grandSlimeLeft(463, 100);
-	drawingShape->witchRight(200,300);
-	drawingShape->witchLeft(250,300);
+    // Obtener todas las entidades del EntityManager
+    const EntityVec& allEntities = entityManager.getEntities();
+    std::cout << "Todas las entidades:\n";
+    for (const auto& entity : allEntities)
+    {
+        std::cout << "ID: " << entity->id() << ", Tag: " << entity->tag() << std::endl;
+    }
 
-	drawingShape->StoneWall(10, 10);
+    // Obtener entidades por etiqueta
+    const EntityVec& tag1Entities = entityManager.getEntities("tag1");
+    std::cout << "Entidades con etiqueta 'tag1':\n";
+    for (const auto& entity : tag1Entities)
+    {
+        std::cout << "ID: " << entity->id() << ", Tag: " << entity->tag() << std::endl;
+    }
 
-	getch();
-	closegraph();
+    // Eliminar una entidad
+    entity2->destroy();
 
-	return 0;
+    // Actualizar el EntityManager para eliminar las entidades muertas
+    entityManager.update();
+
+    // Obtener todas las entidades actualizadas
+    const EntityVec& updatedEntities = entityManager.getEntities();
+    std::cout << "Todas las entidades actualizadas:\n";
+    for (const auto& entity : updatedEntities)
+    {
+        std::cout << "ID: " << entity->id() << ", Tag: " << entity->tag() << std::endl;
+    }
+
+    return 0;
 }

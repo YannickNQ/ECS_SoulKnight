@@ -24,8 +24,8 @@ public:
 	std::shared_ptr<CLifespan> cLifespan;
 
 	//private member access functions
-	bool isActive() const;
-	const std::string& tag() const;
-	const size_t id() const;
-	void destroy();
+	bool isActive() const { return m_active; }
+	const std::string& tag() const { return m_tag; }
+	const size_t id() const { return m_id; }
+	void destroy() { m_active = false; }
 };
