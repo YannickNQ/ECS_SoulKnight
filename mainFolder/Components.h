@@ -20,10 +20,15 @@ class CShape
 {
 	float m_scale;
 public:
+	CShape()
+	{
+		
+	}
 	CShape(float scale): m_scale(scale)
 	{
 		
 	}
+
 
 	void getxy(int x, int y, int L, int alfa, int& _x, int& _y) {
 		_x = L * cos(M_PI * alfa / 180) + x;
@@ -47,6 +52,10 @@ public:
 		{
 			//TODO
 		}
+	}
+	void V(int x,int y,int e){
+		setfillstyle(1,0);
+		bar(x,y,x+e,y+e);
 	}
 
 	void knightLeft(const float x, const float y)
