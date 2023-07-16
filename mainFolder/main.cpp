@@ -20,6 +20,8 @@ int main()
 	drawingShape->knightLeft(221, 100);
 	drawingShape->grandSlimeRight(342, 100);
 	drawingShape->grandSlimeLeft(463, 100);
+	drawingShape->witchRight(200,300);
+	drawingShape->witchLeft(250,300);
 
 	drawingShape->StoneWall(10, 10);
 
