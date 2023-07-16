@@ -1,3 +1,4 @@
+#include <cmath>
 #include "..\winbgim.h"
 //#include "Game.h"
 #include "Vec2.h"
