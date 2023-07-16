@@ -66,6 +66,8 @@
     <ClCompile Include="dibutil.cxx" />
     <ClCompile Include="drawing.cxx" />
     <ClCompile Include="file.cxx" />
+    <ClCompile Include="mainFolder\Entity.cpp" />
+    <ClCompile Include="mainFolder\EntityManager.cpp" />
     <ClCompile Include="mainFolder\Game.cpp" />
     <ClCompile Include="mainFolder\main.cpp" />
     <ClCompile Include="mainFolder\Vec2.cpp" />

@@ -8,6 +8,7 @@ class Game
 {
 	EntityManager m_entities;
 	int m_score = 0;
+	//void m_window;
 	int m_currentFrame = 0;
 	int m_lastEnemySpawnTime = 0;
 	bool m_paused = false;
@@ -21,8 +22,9 @@ class Game
 	void sMovement();
 	void sUserInput();
 	void sLifeSpan();
+	void sAnimation();
 	void sRender();
-	void SEnemySpawner();
+	void sEnemySpawner();
 	void sCollision();
 
 	void spawnPlayer();

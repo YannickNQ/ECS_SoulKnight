@@ -1,11 +1,13 @@
 #include "Vec2.h"
 #include <math.h>
 
+//Constructor de la clase
 Vec2::Vec2()
 {
 
 }
 
+//Inicializacion de variables
 Vec2::Vec2(float xin, float yin) : x(xin), y(yin)
 {
 
