@@ -38,7 +38,7 @@ void Game::init(const std::string & path)
 
 void Game::setPaused(bool paused)
 {
-	
+	m_paused = paused;
 }
 
 void Game::sMovement()
@@ -84,7 +84,7 @@ void Game::sUserInput()
 	//}
 }
 
-void Game::sLifeSpan()
+void Game::sLifeSpan(int total)
 {
 
 }
@@ -95,11 +95,12 @@ void Game::sRender()
 
 	/*for (auto e : m_entities.getEntities())
 	{
-		e->cShape->drawPlayer.setPosition(e->cTransform->pos.x, e->cTransform->pos.y);
+		e->cShape->Player.setPosition(e->cTransform->pos.x, e->cTransform->pos.y);
 		e->cTransform->angle += 1.0f;
 		e->cShape->drawPlayer.setRotation(m_player->cTransform->angle);
 		draw(e->cShape->shape);
 	}*/
+
 }
 
 void Game::sEnemySpawner()

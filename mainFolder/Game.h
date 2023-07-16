@@ -21,7 +21,7 @@ class Game
 
 	void sMovement();
 	void sUserInput();
-	void sLifeSpan();
+	void sLifeSpan(int total);
 	void sAnimation();
 	void sRender();
 	void sEnemySpawner();
