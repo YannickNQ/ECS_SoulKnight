@@ -33,7 +33,7 @@ void Game::run()
 
 void Game::init(const std::string & path)
 {
-	initwindow(600, 600, "SoulKnight");
+	//m_window = initwindow(600, 600, "SoulKnight");
 }
 
 void Game::setPaused(bool paused)

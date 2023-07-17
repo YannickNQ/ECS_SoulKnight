@@ -2,31 +2,27 @@
 #include "..\winbgim.h"
 //#include "Game.h"
 #include "Vec2.h"
-#include "Matrix.h"
 #include "Components.h"
-#include "EntityManager.h"
-
 
 #include <iostream>
 
 int main()
 {	
-    CShape* drawingShape = new CShape(5);
+	CShape* drawingShape = new CShape(5);
 	//Vec2* vector = new Vec2(100, 100);
 
-	//Vec2 v3(200, 200);
-
-	//std::cin.get();
-	initwindow(600, 680, "Pruebas");
-
-	Juego j;
-    j.setFilas(10);
-    j.setColumnas(20);
-    j.setPosJuego(10,10);
-    j.setEscala(5);
-    j.crearMatriz();
-    j.mostrarJuego();
 	
+	initwindow(600, 680, "Pruebas");
+	setfillstyle(SOLID_FILL, 8);
+	bar(0, 0, 600, 680);
+
+	drawingShape->knightRight(100, 100);
+	drawingShape->knightLeft(221, 100);
+	drawingShape->grandSlimeRight(342, 100);
+	drawingShape->grandSlimeLeft(463, 100);
+
+	drawingShape->StoneWall(10, 10);
+
 	getch();
 	closegraph();
 
