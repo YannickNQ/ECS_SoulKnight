@@ -22,7 +22,23 @@ class CShape
 public:
 	CShape(float scale): m_scale(scale)
 	{
-		
+		StoneWall(100,100);
+	}
+	CShape(int x, int y, float scale,std::string tag): m_scale(scale)
+	{
+		if(tag == "wall"){
+			StoneWall(x,y);
+		}
+		else if(tag == "base"){
+            V(x,y);
+        }
+		else if(tag == "player"){
+            knightRight(x,y);
+        }
+
+		else if(tag == "enemy"){
+            grandSlimeRight(x,y);
+        }
 	}
 
 	void getxy(int x, int y, int L, int alfa, int& _x, int& _y) {
@@ -571,7 +587,8 @@ public:
 		fillpoly(32, boca);
 	}
 
-	void V(int x,int y,int e){
+	void V(int x,int y){
+		int e = 0.8*m_scale;
 		setfillstyle(1,0);
 		bar(x,y,x+e,y+e);
 	}

@@ -1,11 +1,13 @@
 #pragma once
 #include "Components.h"
+#include "EntityManager.h"
 #include <random>
 
 #define M 100
 #define P 200
 #define C 300
 #define T 400
+#define E 500
 
 class Matrix{
     private:
@@ -45,6 +47,9 @@ class Matrix{
                 juego[i][columnas-1]=M;
             }
 
+            juego[5][5] = P;
+            juego[5][10] = E;
+
             // for(int i = 1; i<filas-1;i++){
             //     if(filas > columnas){
             //         numA = rand()%filas;
@@ -76,7 +81,7 @@ class Juego{
         int xini;
         int yini;
         int escala;
-        CShape *g;
+        EntityManager g;
         Matrix m;
     public:
         Juego(){}
@@ -91,22 +96,29 @@ class Juego{
             xini=x;
             yini=y;
         }
-        void setEscala(int e){
-            g = new CShape(e);
-        }
+        // void setEscala(int e){
+        //     g = new CShape(e);
+        // }
         void crearMatriz(){
             m.SetMatriz(filas,columnas);
         }
         void mostrarJuego(){
             for(int i=0;i<m.getFilas();i++){
                 for(int j=0;j<m.getColumas();j++){
-                    g->V(xini+j*escala,yini+i*escala,escala);
+                    auto base = g.addEntity("base");
+                    base->cShape = std::make_shared<CShape>(xini+j*40,yini+i*40,5,"base");
                     if(m.getValor(i,j)==M){
-                        g->StoneWall(xini+j*escala,yini+i*escala);
+                        auto wall = g.addEntity("wall");
+                        wall->cShape = std::make_shared<CShape>(xini+j*40,yini+i*40,5,"wall");
                     }
-                    // if(m.getValor(i,j)==P){
-                    //     g->knightRight(xini+j*escala,yini+i*escala);
-                    // }
+                    if(m.getValor(i,j)==P){
+                        auto player = g.addEntity("player");
+                        player->cShape = std::make_shared<CShape>(xini+j*40,yini+i*40,5,"player");
+                    }
+                    if(m.getValor(i,j)==E){
+                        auto player = g.addEntity("enemy");
+                        player->cShape = std::make_shared<CShape>(xini+j*40,yini+i*40,5,"enemy");
+                    }
                     // if(m.getValor(i,j)==C){
                     //     g.comida(xini+j*escala,yini+i*escala,escala,COLOR(255,0,0));
                     //     //draw_manza(xini+j*e,yini+i*e,e);

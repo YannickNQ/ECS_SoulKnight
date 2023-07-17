@@ -5,29 +5,29 @@
 #include "Vec2.h"
 #include "Components.h"
 #include "EntityManager.h"
+#include "Matrix.h"
 
 #include <iostream>
 
 int main()
 {	
-	CShape* drawingShape = new CShape(5);
+	//CShape* drawingShape = new CShape(5);
 	//Vec2* vector = new Vec2(100, 100);
-	initwindow(600,600, "Soul");
+	initwindow(1200,800, "SoulKnight");
+	setfillstyle(SOLID_FILL,8);
+	bar(0,0,1200,800);
 
 	EntityManager entityManager;
 
     // Agregar entidades al EntityManager
-    std::shared_ptr<Entity> entity1 = entityManager.addEntity("tag1");
-    std::shared_ptr<Entity> entity2 = entityManager.addEntity("tag2");
-    std::shared_ptr<Entity> entity3 = entityManager.addEntity("tag1");
-
-    // Obtener todas las entidades del EntityManager
-    const EntityVec& allEntities = entityManager.getEntities();
-    std::cout << "Todas las entidades:\n";
-    for (const auto& entity : allEntities)
-    {
-        std::cout << "ID: " << entity->id() << ", Tag: " << entity->tag() << std::endl;
-    }
+    auto entity1 = entityManager.addEntity("tag1");
+    
+	Juego j;
+    j.setFilas(10);
+    j.setColumnas(20);
+    j.setPosJuego(10,10);
+    j.crearMatriz();
+    j.mostrarJuego();
 
 	getch();
 	closegraph();
