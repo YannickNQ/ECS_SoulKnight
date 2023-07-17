@@ -1,0 +1,51 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.34.31937.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/cpp_gamedevelopment/ecs_soulknight/palette.cxx"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "c6642a2d21dbb0fd2ddd13bd32292653efea358d3632d3b57371ecc19f3cc922"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/cpp_gamedevelopment/ecs_soulknight/winbgi.h"
+          },
+          "hashes": {
+            "sha-256": "7adce22ff82a4a8d40069dbcd44d1ce32d27bee32aab20c44544a313ee670686"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/cpp_gamedevelopment/ecs_soulknight/winbgitypes.h"
+          },
+          "hashes": {
+            "sha-256": "2aa422c9404ccd5d1ac4458a38f1302e1760b797c1a73ede4bd193eab1847cf0"
+          }
+        }
+      ]
+    }
+  ]
+}

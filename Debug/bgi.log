@@ -1,1 +1,6 @@
-﻿  bgi.vcxproj -> D:\Cpp_GameDevelopment\ECS_SoulKnight\Debug\bgi.exe
+﻿  EntityManager.cpp
+  winthread.cxx
+D:\Cpp_GameDevelopment\ECS_SoulKnight\winthread.cxx(320,9): warning C4101: 'i': unreferenced local variable
+  Generating Code...
+Debug\main.obj : warning LNK4042: object specified more than once; extras ignored
+  bgi.vcxproj -> D:\Cpp_GameDevelopment\ECS_SoulKnight\Debug\bgi.exe

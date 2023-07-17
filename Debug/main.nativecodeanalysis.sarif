@@ -1,0 +1,241 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "Inconsistent annotation for 'WinMain': this instance has no annotations. See c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\um\\winbase.h(1006). "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/main.cxx"
+                },
+                "region": {
+                  "startLine": 110,
+                  "startColumn": 14,
+                  "endLine": 110,
+                  "endColumn": 14
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "WinMain",
+                  "decoratedName": "WinMain@16",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/main.cxx"
+                },
+                "region": {
+                  "startLine": 184,
+                  "startColumn": 34,
+                  "endLine": 184,
+                  "endColumn": 43
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "draw_iris",
+                  "decoratedName": "?draw_iris@@YAXHH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/main.cxx"
+                },
+                "region": {
+                  "startLine": 185,
+                  "startColumn": 34,
+                  "endLine": 185,
+                  "endColumn": 43
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "draw_iris",
+                  "decoratedName": "?draw_iris@@YAXHH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/main.cxx"
+                },
+                "region": {
+                  "startLine": 218,
+                  "startColumn": 31,
+                  "endLine": 218,
+                  "endColumn": 36
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "check_vertical",
+                  "decoratedName": "?check_vertical@@YA_NHHHHAAN0H@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/main.cxx"
+                },
+                "region": {
+                  "startLine": 220,
+                  "startColumn": 31,
+                  "endLine": 220,
+                  "endColumn": 36
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "check_vertical",
+                  "decoratedName": "?check_vertical@@YA_NHHHHAAN0H@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/main.cxx"
+                },
+                "region": {
+                  "startLine": 248,
+                  "startColumn": 35,
+                  "endLine": 248,
+                  "endColumn": 40
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "find_coordinates",
+                  "decoratedName": "?find_coordinates@@YAXHHHHAAN0HH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/main.cxx"
+                },
+                "region": {
+                  "startLine": 248,
+                  "startColumn": 56,
+                  "endLine": 248,
+                  "endColumn": 60
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "find_coordinates",
+                  "decoratedName": "?find_coordinates@@YAXHHHHAAN0HH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.34.31937.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/main.cxx"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "db89caaa912bee2da4ec15f033672dc6cc2fdfbfba87cc4bf89054d483597963"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/cpp_gamedevelopment/ecs_soulknight/graphics.h"
+          },
+          "hashes": {
+            "sha-256": "7adce22ff82a4a8d40069dbcd44d1ce32d27bee32aab20c44544a313ee670686"
+          }
+        }
+      ]
+    }
+  ]
+}

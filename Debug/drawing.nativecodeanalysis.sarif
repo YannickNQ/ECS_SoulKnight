@@ -1,0 +1,747 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "'_Param_(10)' could be '0'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                },
+                "region": {
+                  "startLine": 1076,
+                  "startColumn": 2,
+                  "endLine": 1076,
+                  "endColumn": 93
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "readimagefile",
+                  "decoratedName": "readimagefile",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1044,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1045,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1046,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1047,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1047,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1048,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1048,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1049,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1050,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1052,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1064,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1067,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1068,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1070,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1071,
+                            "startColumn": 6
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1072,
+                            "startColumn": 8
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1073,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1074,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1075,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1076,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6054",
+          "message": {
+            "text": "String 'fn' might not be zero-terminated."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                },
+                "region": {
+                  "startLine": 1109,
+                  "startColumn": 6,
+                  "endLine": 1109,
+                  "endColumn": 74
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "writeimagefile",
+                  "decoratedName": "writeimagefile",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1089,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1089,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1090,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1091,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1092,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1093,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1094,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1095,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1096,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1097,
+                            "startColumn": 11
+                          }
+                        },
+                        "message": {
+                          "text": "This expression may not zero-terminate 'fn'"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1099,
+                            "startColumn": 18
+                          }
+                        },
+                        "message": {
+                          "text": "Enter this branch, (assume 'filename==0')"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1101,
+                            "startColumn": 2
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1102,
+                            "startColumn": 2
+                          }
+                        },
+                        "message": {
+                          "text": "'fn' is an Output from 'memset' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.34.31933\\include\\vcruntime_string.h:63)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1103,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1104,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1105,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1106,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1107,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1108,
+                            "startColumn": 6
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '!GetSaveFileNameA(&ofn)' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1109,
+                            "startColumn": 21
+                          }
+                        },
+                        "message": {
+                          "text": "'fn' is an Input to 'strlen' (declared at c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:215)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+                          },
+                          "region": {
+                            "startLine": 1109,
+                            "startColumn": 21
+                          }
+                        },
+                        "message": {
+                          "text": "'fn' is required to be zero-terminated by a SAL annotation on 'strlen'"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.34.31937.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/Cpp_GameDevelopment/ECS_SoulKnight/drawing.cxx"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "404d52c1288475d1306d384f1a470041c9bcbb003d997e2fee7eba127066f80b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/cpp_gamedevelopment/ecs_soulknight/winbgi.h"
+          },
+          "hashes": {
+            "sha-256": "7adce22ff82a4a8d40069dbcd44d1ce32d27bee32aab20c44544a313ee670686"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/cpp_gamedevelopment/ecs_soulknight/winbgitypes.h"
+          },
+          "hashes": {
+            "sha-256": "2aa422c9404ccd5d1ac4458a38f1302e1760b797c1a73ede4bd193eab1847cf0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/cpp_gamedevelopment/ecs_soulknight/dibapi.h"
+          },
+          "hashes": {
+            "sha-256": "e798783c36f50e2fdcb84d77c25095e6fc6ebeaf5a40e2a83794b6e6be97e07d"
+          }
+        }
+      ]
+    }
+  ]
+}
