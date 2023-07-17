@@ -13,7 +13,7 @@ class Entity
 	std::string m_tag = "default";
 
 	//Constructor y Destructor
-	Entity(const size_t id, const std::string& tag);
+	Entity(const size_t id, const std::string& tag):m_id(id),m_tag(tag){};
 public:
 	//Component pointers
 	std::shared_ptr<CTransform> cTransform;
