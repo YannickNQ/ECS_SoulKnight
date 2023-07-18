@@ -115,6 +115,8 @@ void Game::sCollision()
 		for (auto e : m_entities.getEntities("enemy"))
 		{
 
+			if()
+
 		}
 	}*/
 }
@@ -141,12 +143,8 @@ void Game::spawnEnemy()
 
 	//entity->cTransform = std::make_shared<CTransform>(Vec2(ex, ey), Vec2(0.0f, 0.0f), 0.0f);
 
-	//entity->cShape = std::make_shared<CShape>(32.0f, 8, COLOR(10, 10, 10), COLOR(255, 0, 0), 4.0f);
-
-	//entity->cInput = std::make_shared<CInput>();
-
-	//m_player = entity;
-
+	//entity->cShape = std::make_shared<CShape>();
+	// 
 	//m_lastEnemySpawnTime = m_currentFrame;
 }
 
