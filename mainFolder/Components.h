@@ -33,7 +33,7 @@ public:
             V(x,y);
         }
 		else if(tag == "player"){
-            knightRight(x,y);
+            knightLeft(x,y);
         }
 
 		else if(tag == "enemy"){
@@ -67,301 +67,301 @@ public:
 
 	void knightLeft(const float x, const float y)
 	{
-		float scale = 1.2 * m_scale;
+		float scale = 0.8 * m_scale;
 		setfillstyle(SOLID_FILL, BLACK);
 		// Heroe border
 		// casco
-		bar(x + 2.4 * scale, y, x + 5.2 * scale, y + .4 * scale);
-		bar(x + 1.6 * scale, y + .4 * scale, x + 2.4 * scale, y + .8 * scale);
-		bar(x + 1.2 * scale, y + .8 * scale, x + 1.6 * scale, y + 1.2 * scale);
-		bar(x + .8 * scale, y + 1.2 * scale, x + 1.2 * scale, y + 2.0 * scale);
-		bar(x + .4 * scale, y + 2.0 * scale, x + .8 * scale, y + 3.2 * scale);
+		bar(x + .24 * scale, y, x + .52 * scale, y + .04 * scale);
+		bar(x + .16 * scale, y + .04 * scale, x + .24 * scale, y + .08 * scale);
+		bar(x + .12 * scale, y + .08 * scale, x + .16 * scale, y + .12 * scale);
+		bar(x + .08 * scale, y + .12 * scale, x + .12 * scale, y + .20 * scale);
+		bar(x + .04 * scale, y + .20 * scale, x + .08 * scale, y + .32 * scale);
 		// Eyes
-		bar(x, y + 3.2 * scale, x + .4 * scale, y + 4.8 * scale);
+		bar(x, y + .32 * scale, x + .04 * scale, y + .48 * scale);
 		// Chin
-		bar(x + .4 * scale, y + 4.8 * scale, x + .8 * scale, y + 6.4 * scale);
+		bar(x + .04 * scale, y + .48 * scale, x + .08 * scale, y + .64 * scale);
 		// Body
-		bar(x + .8 * scale, y + 6.4 * scale, x + 1.2 * scale, y + 7.6 * scale);
-		bar(x + 1.2 * scale, y + 7.6 * scale, x + 1.6 * scale, y + 8.8 * scale);
+		bar(x + .08 * scale, y + .64 * scale, x + .12 * scale, y + .76 * scale);
+		bar(x + .12 * scale, y + .76 * scale, x + .16 * scale, y + .88 * scale);
 		// Line before Foot
-		bar(x + 1.6 * scale, y + 8.8 * scale, x + 6.4 * scale, y + 9.2 * scale);
+		bar(x + .16 * scale, y + .88 * scale, x + .64 * scale, y + .92 * scale);
 		// Foot
-		bar(x + 1.6 * scale, y + 9.2 * scale, x + 2.8 * scale, y + 9.6 * scale);
-		bar(x + 4.8 * scale, y + 9.2 * scale, x + 6.0 * scale, y + 9.6 * scale);
-		bar(x + 2.0 * scale, y + 9.6 * scale, x + 2.8 * scale, y + 10. * scale);
-		bar(x + 5.2 * scale, y + 9.6 * scale, x + 6.0 * scale, y + 10. * scale);
+		bar(x + .16 * scale, y + .92 * scale, x + .28 * scale, y + .96 * scale);
+		bar(x + .48 * scale, y + .92 * scale, x + .60 * scale, y + .96 * scale);
+		bar(x + .20 * scale, y + .96 * scale, x + .28 * scale, y + 1. * scale);
+		bar(x + .52 * scale, y + .96 * scale, x + .60 * scale, y + 1. * scale);
 		// Second Part
 		// Body
-		bar(x + 6.4 * scale, y + 7.6 * scale, x + 7.2 * scale, y + 8.8 * scale);
+		bar(x + .64 * scale, y + .76 * scale, x + .72 * scale, y + .88 * scale);
 		// Chalina
-		bar(x + 6.8 * scale, y + 8.8 * scale, x + 7.2 * scale, y + 9.2 * scale);
-		bar(x + 7.2 * scale, y + 9.2 * scale, x + 7.6 * scale, y + 9.6 * scale);
-		bar(x + 7.6 * scale, y + 9.6 * scale, x + 10. * scale, y + 10. * scale);
-		bar(x + 9.6 * scale, y + 9.2 * scale, x + 10. * scale, y + 9.6 * scale);
-		bar(x + 8.8 * scale, y + 8.8 * scale, x + 9.6 * scale, y + 9.2 * scale);
-		bar(x + 8.4 * scale, y + 8.0 * scale, x + 8.8 * scale, y + 8.8 * scale);
-		bar(x + 8.0 * scale, y + 6.8 * scale, x + 8.4 * scale, y + 8.0 * scale);
-		bar(x + 7.6 * scale, y + 6.4 * scale, x + 8.0 * scale, y + 6.8 * scale);
-		bar(x + 6.8 * scale, y + 6.0 * scale, x + 7.6 * scale, y + 6.4 * scale);
+		bar(x + .68 * scale, y + .88 * scale, x + .72 * scale, y + .92 * scale);
+		bar(x + .72 * scale, y + .92 * scale, x + .76 * scale, y + .96 * scale);
+		bar(x + .76 * scale, y + .96 * scale, x + 1. * scale, y + 1. * scale);
+		bar(x + .96 * scale, y + .92 * scale, x + 1. * scale, y + .96 * scale);
+		bar(x + .88 * scale, y + .88 * scale, x + .96 * scale, y + .92 * scale);
+		bar(x + .84 * scale, y + .80 * scale, x + .88 * scale, y + .88 * scale);
+		bar(x + .80 * scale, y + .68 * scale, x + .84 * scale, y + .80 * scale);
+		bar(x + .76 * scale, y + .64 * scale, x + .80 * scale, y + .68 * scale);
+		bar(x + .68 * scale, y + .60 * scale, x + .76 * scale, y + .64 * scale);
 		// Head
-		bar(x + 6.8 * scale, y + 2.0 * scale, x + 7.2 * scale, y + 6.0 * scale);
-		bar(x + 6.4 * scale, y + 1.2 * scale, x + 6.8 * scale, y + 2.0 * scale);
-		bar(x + 6.0 * scale, y + .8 * scale, x + 6.4 * scale, y + 1.2 * scale);
-		bar(x + 5.2 * scale, y + .4 * scale, x + 6.0 * scale, y + .8 * scale);
+		bar(x + .68 * scale, y + .20 * scale, x + .72 * scale, y + .60 * scale);
+		bar(x + .64 * scale, y + .12 * scale, x + .68 * scale, y + .20 * scale);
+		bar(x + .60 * scale, y + .08 * scale, x + .64 * scale, y + .12 * scale);
+		bar(x + .52 * scale, y + .04 * scale, x + .60 * scale, y + .08 * scale);
 
 		// Filling
 		setfillstyle(SOLID_FILL, knightPalette().grayBlue);
-		bar(x + 2.4 * scale, y + .4 * scale, x + 5.2 * scale, y + 0.8 * scale);
-		bar(x + 1.6 * scale, y + .8 * scale, x + 6.0 * scale, y + 1.2 * scale);
-		bar(x + 1.2 * scale, y + 1.2 * scale, x + 6.4 * scale, y + 2.0 * scale);
-		bar(x + .8 * scale, y + 5.2 * scale, x + 1.2 * scale, y + 6.4 * scale);
+		bar(x + .24 * scale, y + .04 * scale, x + .52 * scale, y + .08 * scale);
+		bar(x + .16 * scale, y + .08 * scale, x + .60 * scale, y + .12 * scale);
+		bar(x + .12 * scale, y + .12 * scale, x + .64 * scale, y + .20 * scale);
+		bar(x + .08 * scale, y + .52 * scale, x + .12 * scale, y + .64 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().lightBlue);
-		bar(x + 2.8 * scale, y + .8 * scale, x + 4.0 * scale, y + 1.2 * scale);
-		bar(x + 2.8 * scale, y + 1.2 * scale, x + 3.2 * scale, y + 1.6 * scale);
+		bar(x + .28 * scale, y + .08 * scale, x + .40 * scale, y + .12 * scale);
+		bar(x + .28 * scale, y + .12 * scale, x + .32 * scale, y + .16 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().blue);
-		bar(x + 6.0 * scale, y + 1.6 * scale, x + 6.4 * scale, y + 2.0 * scale);
-		bar(x + 6.4 * scale, y + 2.0 * scale, x + 6.8 * scale, y + 6.4 * scale);
-		bar(x + 6.0 * scale, y + 5.6 * scale, x + 6.4 * scale, y + 6.4 * scale);
+		bar(x + .60 * scale, y + .16 * scale, x + .64 * scale, y + .20 * scale);
+		bar(x + .64 * scale, y + .20 * scale, x + .68 * scale, y + .64 * scale);
+		bar(x + .60 * scale, y + .56 * scale, x + .64 * scale, y + .64 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().darkBlue);
-		bar(x + 4.8 * scale, y + 1.6 * scale, x + 6.0 * scale, y + 2.0 * scale);
-		bar(x + .8 * scale, y + 2.0 * scale, x + 6.4 * scale, y + 2.8 * scale);
-		bar(x + 4.8 * scale, y + 2.8 * scale, x + 6.4 * scale, y + 3.2 * scale);
-		bar(x + 5.2 * scale, y + 3.2 * scale, x + 6.4 * scale, y + 5.6 * scale);
-		bar(x + 4.0 * scale, y + 4.8 * scale, x + 6.0 * scale, y + 6.4 * scale);
-		bar(x + .8 * scale, y + 4.8 * scale, x + 1.2 * scale, y + 5.2 * scale);
-		bar(x + 1.6 * scale, y + 7.6 * scale, x + 6.4 * scale, y + 8.8 * scale);
+		bar(x + .48 * scale, y + .16 * scale, x + .60 * scale, y + .20 * scale);
+		bar(x + .08 * scale, y + .20 * scale, x + .64 * scale, y + .28 * scale);
+		bar(x + .48 * scale, y + .28 * scale, x + .64 * scale, y + .32 * scale);
+		bar(x + .52 * scale, y + .32 * scale, x + .64 * scale, y + .56 * scale);
+		bar(x + .40 * scale, y + .48 * scale, x + .60 * scale, y + .64 * scale);
+		bar(x + .08 * scale, y + .48 * scale, x + .12 * scale, y + .52 * scale);
+		bar(x + .16 * scale, y + .76 * scale, x + .64 * scale, y + .88 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().grayBlue);
-		bar(x + 4.4 * scale, y + 5.6 * scale, x + 5.4 * scale, y + 6.0 * scale);
-		bar(x + 4.4 * scale, y + 6.0 * scale, x + 5.0 * scale, y + 6.4 * scale);
-		bar(x + 3.2 * scale, y + 8.0 * scale, x + 5.2 * scale, y + 8.6 * scale);
-		bar(x + 1.6 * scale, y + 8.0 * scale, x + 2.8 * scale, y + 8.6 * scale);
-		bar(x + 1.6 * scale, y + 7.6 * scale, x + 2.0 * scale, y + 8.0 * scale);
+		bar(x + .44 * scale, y + .56 * scale, x + .54 * scale, y + .60 * scale);
+		bar(x + .44 * scale, y + .60 * scale, x + .50 * scale, y + .64 * scale);
+		bar(x + .32 * scale, y + .80 * scale, x + .52 * scale, y + .86 * scale);
+		bar(x + .16 * scale, y + .80 * scale, x + .28 * scale, y + .86 * scale);
+		bar(x + .16 * scale, y + .76 * scale, x + .20 * scale, y + .80 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().blue);
-		bar(x + 6.0 * scale, y + 7.6 * scale, x + 6.4 * scale, y + 8.4 * scale);
-		bar(x + 1.6 * scale, y + 8.4 * scale, x + 2.0 * scale, y + 8.8 * scale);
+		bar(x + .60 * scale, y + .76 * scale, x + .64 * scale, y + .84 * scale);
+		bar(x + .16 * scale, y + .84 * scale, x + .20 * scale, y + .88 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().lightBlue);
-		bar(x + 2.0 * scale, y + 7.6 * scale, x + 2.4 * scale, y + 8.0 * scale);
-		bar(x + 2.4 * scale, y + 8.0 * scale, x + 3.2 * scale, y + 8.4 * scale);
-		bar(x + 3.2 * scale, y + 7.6 * scale, x + 3.6 * scale, y + 8.0 * scale);
+		bar(x + .20 * scale, y + .76 * scale, x + .24 * scale, y + .80 * scale);
+		bar(x + .24 * scale, y + .80 * scale, x + .32 * scale, y + .84 * scale);
+		bar(x + .32 * scale, y + .76 * scale, x + .36 * scale, y + .80 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().pink);
-		bar(x + .8 * scale, y + 3.6 * scale, x + 4.6 * scale, y + 4.8 * scale);
+		bar(x + .08 * scale, y + .36 * scale, x + .46 * scale, y + .48 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().orange);
-		bar(x + 5.0 * scale, y + 3.2 * scale, x + 5.4 * scale, y + 4.8 * scale);
-		bar(x + 4.6 * scale, y + 2.8 * scale, x + 5.0 * scale, y + 3.2 * scale);
-		bar(x + .8 * scale, y + 2.8 * scale, x + 1.6 * scale, y + 3.2 * scale);
-		bar(x + .4 * scale, y + 3.2 * scale, x + .8 * scale, y + 4.4 * scale);
-		bar(x + 1.6 * scale, y + 4.4 * scale, x + 2.0 * scale, y + 6.4 * scale);
+		bar(x + .50 * scale, y + .32 * scale, x + .54 * scale, y + .48 * scale);
+		bar(x + .46 * scale, y + .28 * scale, x + .50 * scale, y + .32 * scale);
+		bar(x + .08 * scale, y + .28 * scale, x + .16 * scale, y + .32 * scale);
+		bar(x + .04 * scale, y + .32 * scale, x + .08 * scale, y + .44 * scale);
+		bar(x + .16 * scale, y + .44 * scale, x + .20 * scale, y + .64 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().lightOrange);
-		bar(x + 1.6 * scale, y + 2.8 * scale, x + 4.6 * scale, y + 3.2 * scale);
-		bar(x + 4.6 * scale, y + 3.2 * scale, x + 5.0 * scale, y + 4.8 * scale);
-		bar(x + 3.6 * scale, y + 4.4 * scale, x + 4.6 * scale, y + 4.8 * scale);
-		bar(x + 3.6 * scale, y + 4.8 * scale, x + 4.0 * scale, y + 6.4 * scale);
-		bar(x + .4 * scale, y + 4.4 * scale, x + 1.6 * scale, y + 4.8 * scale);
-		bar(x + 1.2 * scale, y + 4.8 * scale, x + 1.6 * scale, y + 6.4 * scale);
+		bar(x + .16 * scale, y + .28 * scale, x + .46 * scale, y + .32 * scale);
+		bar(x + .46 * scale, y + .32 * scale, x + .50 * scale, y + .48 * scale);
+		bar(x + .36 * scale, y + .44 * scale, x + .46 * scale, y + .48 * scale);
+		bar(x + .36 * scale, y + .48 * scale, x + .40 * scale, y + .64 * scale);
+		bar(x + .04 * scale, y + .44 * scale, x + .16 * scale, y + .48 * scale);
+		bar(x + .12 * scale, y + .48 * scale, x + .16 * scale, y + .64 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().lightYellow);
-		bar(x + 2.0 * scale, y + 2.8 * scale, x + 2.4 * scale, y + 3.2 * scale);
-		bar(x + 2.8 * scale, y + 2.8 * scale, x + 4.0 * scale, y + 3.2 * scale);
+		bar(x + .20 * scale, y + .28 * scale, x + .24 * scale, y + .32 * scale);
+		bar(x + .28 * scale, y + .28 * scale, x + .40 * scale, y + .32 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().brown);
-		bar(x + .8 * scale, y + 3.2 * scale, x + 4.6 * scale, y + 3.6 * scale);
-		bar(x + .8 * scale, y + 3.6 * scale, x + 1.2 * scale, y + 4.4 * scale);
+		bar(x + .08 * scale, y + .32 * scale, x + .46 * scale, y + .36 * scale);
+		bar(x + .08 * scale, y + .36 * scale, x + .12 * scale, y + .44 * scale);
 
 		setfillstyle(SOLID_FILL, BLACK);
-		bar(x + 1.6 * scale, y + 3.6 * scale, x + 2.0 * scale, y + 4.4 * scale);
-		bar(x + 3.6 * scale, y + 3.6 * scale, x + 4.0 * scale, y + 4.4 * scale);
+		bar(x + .16 * scale, y + .36 * scale, x + .20 * scale, y + .44 * scale);
+		bar(x + .36 * scale, y + .36 * scale, x + .40 * scale, y + .44 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().skin);
-		bar(x + 2.0 * scale, y + 4.8 * scale, x + 3.6 * scale, y + 6.4 * scale);
+		bar(x + .20 * scale, y + .48 * scale, x + .36 * scale, y + .64 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().red);
 		// mouth
-		bar(x + 2.4 * scale, y + 5.2 * scale, x + 3.2 * scale, y + 5.6 * scale);
+		bar(x + .24 * scale, y + .52 * scale, x + .32 * scale, y + .56 * scale);
 		// Chalina
-		bar(x + 1.2 * scale, y + 6.4 * scale, x + 7.6 * scale, y + 7.6 * scale);
-		bar(x + 7.2 * scale, y + 6.8 * scale, x + 8.0 * scale, y + 8.8 * scale);
-		bar(x + 7.8 * scale, y + 8.8 * scale, x + 8.4 * scale, y + 9.2 * scale);
-		bar(x + 8.4 * scale, y + 9.2 * scale, x + 9.6 * scale, y + 9.6 * scale);
+		bar(x + .12 * scale, y + .64 * scale, x + .76 * scale, y + .76 * scale);
+		bar(x + .72 * scale, y + .68 * scale, x + .80 * scale, y + .88 * scale);
+		bar(x + .78 * scale, y + .88 * scale, x + .84 * scale, y + .92 * scale);
+		bar(x + .84 * scale, y + .92 * scale, x + .96 * scale, y + .96 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().darkRed);
-		bar(x + 1.2 * scale, y + 7.2 * scale, x + 1.6 * scale, y + 7.6 * scale);
-		bar(x + 6.4 * scale, y + 6.8 * scale, x + 7.2 * scale, y + 7.2 * scale);
-		bar(x + 6.8 * scale, y + 7.2 * scale, x + 7.4 * scale, y + 7.6 * scale);
-		bar(x + 7.2 * scale, y + 7.6 * scale, x + 7.4 * scale, y + 9.2 * scale);
-		bar(x + 7.2 * scale, y + 8.8 * scale, x + 7.8 * scale, y + 9.2 * scale);
-		bar(x + 7.6 * scale, y + 9.2 * scale, x + 8.4 * scale, y + 9.6 * scale);
-		bar(x + 8.0 * scale, y + 8.0 * scale, x + 8.4 * scale, y + 8.8 * scale);
-		bar(x + 8.4 * scale, y + 8.8 * scale, x + 8.8 * scale, y + 9.2 * scale);
+		bar(x + .12 * scale, y + .72 * scale, x + .16 * scale, y + .76 * scale);
+		bar(x + .64 * scale, y + .68 * scale, x + .72 * scale, y + .72 * scale);
+		bar(x + .68 * scale, y + .72 * scale, x + .74 * scale, y + .76 * scale);
+		bar(x + .72 * scale, y + .76 * scale, x + .74 * scale, y + .92 * scale);
+		bar(x + .72 * scale, y + .88 * scale, x + .78 * scale, y + .92 * scale);
+		bar(x + .76 * scale, y + .92 * scale, x + .84 * scale, y + .96 * scale);
+		bar(x + .80 * scale, y + .80 * scale, x + .84 * scale, y + .88 * scale);
+		bar(x + .84 * scale, y + .88 * scale, x + .88 * scale, y + .92 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().hardOrange);
-		bar(x + 1.6 * scale, y + 6.4 * scale, x + 4.4 * scale, y + 6.8 * scale);
-		bar(x + 2.0 * scale, y + 6.8 * scale, x + 5.2 * scale, y + 7.2 * scale);
+		bar(x + .16 * scale, y + .64 * scale, x + .44 * scale, y + .68 * scale);
+		bar(x + .20 * scale, y + .68 * scale, x + .52 * scale, y + .72 * scale);
 	}
 
 	void knightRight(const float x, const float y)
 	{
-		float scale = 1.2 * m_scale;
+		float scale = 0.8 * m_scale;
 		setfillstyle(SOLID_FILL, BLACK);
 		//Heroe border
 		//casco
-		bar(x + 4.8 * scale, y, x + 7.6 * scale, y + .4 * scale);
-		bar(x + 7.6 * scale, y + .4 * scale, x + 8.4 * scale, y + .8 * scale);
-		bar(x + 8.4 * scale, y + .8 * scale, x + 8.8 * scale, y + 1.2 * scale);
-		bar(x + 8.8 * scale, y + 1.2 * scale, x + 9.2 * scale, y + 2.0 * scale);
-		bar(x + 9.2 * scale, y + 2.0 * scale, x + 9.6 * scale, y + 3.2 * scale);
+		bar(x + .48 * scale, y, x + .76 * scale, y + .04 * scale);
+		bar(x + .76 * scale, y + .04 * scale, x + .84 * scale, y + .08 * scale);
+		bar(x + .84 * scale, y + .08 * scale, x + .88 * scale, y + .12 * scale);
+		bar(x + .88 * scale, y + .12 * scale, x + .92 * scale, y + .20 * scale);
+		bar(x + .92 * scale, y + .20 * scale, x + .96 * scale, y + .32 * scale);
 		//Eyes
-		bar(x + 9.6 * scale, y + 3.2 * scale, x + 10. * scale, y + 4.8 * scale);
+		bar(x + .96 * scale, y + .32 * scale, x + 1. * scale, y + .48 * scale);
 		//Chin
-		bar(x + 9.2 * scale, y + 4.8 * scale, x + 9.6 * scale, y + 6.4 * scale);
+		bar(x + .92 * scale, y + .48 * scale, x + .96 * scale, y + .64 * scale);
 		//Body
-		bar(x + 8.8 * scale, y + 6.4 * scale, x + 9.2 * scale, y + 7.6 * scale);
-		bar(x + 8.4 * scale, y + 7.6 * scale, x + 8.8 * scale, y + 8.8 * scale);
+		bar(x + .88 * scale, y + .64 * scale, x + .92 * scale, y + .76 * scale);
+		bar(x + .84 * scale, y + .76 * scale, x + .88 * scale, y + .88 * scale);
 		//Line before Foot
-		bar(x + 3.6 * scale, y + 8.8 * scale, x + 8.4 * scale, y + 9.2 * scale);
+		bar(x + .36 * scale, y + .88 * scale, x + .84 * scale, y + .92 * scale);
 		//Foot
-		bar(x + 7.2 * scale, y + 9.2 * scale, x + 8.4 * scale, y + 9.6 * scale);
-		bar(x + 4.0 * scale, y + 9.2 * scale, x + 5.2 * scale, y + 9.6 * scale);
-		bar(x + 7.2 * scale, y + 9.6 * scale, x + 8.0 * scale, y + 10. * scale);
-		bar(x + 4.0 * scale, y + 9.6 * scale, x + 4.8 * scale, y + 10. * scale);
+		bar(x + .72 * scale, y + .92 * scale, x + .84 * scale, y + .96 * scale);
+		bar(x + .40 * scale, y + .92 * scale, x + .52 * scale, y + .96 * scale);
+		bar(x + .72 * scale, y + .96 * scale, x + .80 * scale, y + 1. * scale);
+		bar(x + .40 * scale, y + .96 * scale, x + .48 * scale, y + 1. * scale);
 		//Second Part
 		//Body
-		bar(x + 2.8 * scale, y + 7.6 * scale, x + 3.6 * scale, y + 8.8 * scale);
+		bar(x + .28 * scale, y + .76 * scale, x + .36 * scale, y + .88 * scale);
 		//Chalina
-		bar(x + 2.8 * scale, y + 8.8 * scale, x + 3.2 * scale, y + 9.2 * scale);
-		bar(x + 2.4 * scale, y + 9.2 * scale, x + 2.8 * scale, y + 9.6 * scale);
-		bar(x, y + 9.6 * scale, x + 2.4 * scale, y + 10. * scale);
-		bar(x, y + 9.2 * scale, x + .4 * scale, y + 9.6 * scale);
-		bar(x + .4 * scale, y + 8.8 * scale, x + 1.2 * scale, y + 9.2 * scale);
-		bar(x + 1.2 * scale, y + 8.0 * scale, x + 1.6 * scale, y + 8.8 * scale);
-		bar(x + 1.6 * scale, y + 6.8 * scale, x + 2.0 * scale, y + 8.0 * scale);
-		bar(x + 2.0 * scale, y + 6.4 * scale, x + 2.4 * scale, y + 6.8 * scale);
-		bar(x + 2.4 * scale, y + 6.0 * scale, x + 3.2 * scale, y + 6.4 * scale);
+		bar(x + .28 * scale, y + .88 * scale, x + .32 * scale, y + .92 * scale);
+		bar(x + .24 * scale, y + .92 * scale, x + .28 * scale, y + .96 * scale);
+		bar(x, y + .96 * scale, x + .24 * scale, y + 1. * scale);
+		bar(x, y + .92 * scale, x + .04 * scale, y + .96 * scale);
+		bar(x + .04 * scale, y + .88 * scale, x + .12 * scale, y + .92 * scale);
+		bar(x + .12 * scale, y + .80 * scale, x + .16 * scale, y + .88 * scale);
+		bar(x + .16 * scale, y + .68 * scale, x + .20 * scale, y + .80 * scale);
+		bar(x + .20 * scale, y + .64 * scale, x + .24 * scale, y + .68 * scale);
+		bar(x + .24 * scale, y + .60 * scale, x + .32 * scale, y + .64 * scale);
 		//Head
-		bar(x + 2.8 * scale, y + 2.0 * scale, x + 3.2 * scale, y + 6.0 * scale);
-		bar(x + 3.2 * scale, y + 1.2 * scale, x + 3.6 * scale, y + 2.0 * scale);
-		bar(x + 3.6 * scale, y + .8 * scale, x + 4.0 * scale, y + 1.2 * scale);
-		bar(x + 4.0 * scale, y + .4 * scale, x + 4.8 * scale, y + .8 * scale);
+		bar(x + .28 * scale, y + .20 * scale, x + .32 * scale, y + .60 * scale);
+		bar(x + .32 * scale, y + .12 * scale, x + .36 * scale, y + .20 * scale);
+		bar(x + .36 * scale, y + .08 * scale, x + .40 * scale, y + .12 * scale);
+		bar(x + .40 * scale, y + .04 * scale, x + .48 * scale, y + .08 * scale);
 
 		//Filling
 		setfillstyle(SOLID_FILL, knightPalette().grayBlue);
-		bar(x + 4.8 * scale, y + .4 * scale, x + 7.6 * scale, y + .8 * scale);
-		bar(x + 4.0 * scale, y + .8 * scale, x + 8.4 * scale, y + 1.2 * scale);
-		bar(x + 3.6 * scale, y + 1.2 * scale, x + 8.8 * scale, y + 2.0 * scale);
-		bar(x + 8.8 * scale, y + 5.2 * scale, x + 9.2 * scale, y + 6.4 * scale);
+		bar(x + .48 * scale, y + .04 * scale, x + .76 * scale, y + .08 * scale);
+		bar(x + .40 * scale, y + .08 * scale, x + .84 * scale, y + .12 * scale);
+		bar(x + .36 * scale, y + .12 * scale, x + .88 * scale, y + .20 * scale);
+		bar(x + .88 * scale, y + .52 * scale, x + .92 * scale, y + .64 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().lightBlue);
-		bar(x + 6.0 * scale, y + .8 * scale, x + 7.2 * scale, y + 1.2 * scale);
-		bar(x + 6.8 * scale, y + 1.2 * scale, x + 7.2 * scale, y + 1.6 * scale);
+		bar(x + .60 * scale, y + .08 * scale, x + .72 * scale, y + .12 * scale);
+		bar(x + .68 * scale, y + .12 * scale, x + .72 * scale, y + .16 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().blue);
-		bar(x + 3.6 * scale, y + 1.6 * scale, x + 4.0 * scale, y + 2.0 * scale);
-		bar(x + 3.2 * scale, y + 2.0 * scale, x + 3.6 * scale, y + 6.4 * scale);
-		bar(x + 3.6 * scale, y + 5.6 * scale, x + 4.0 * scale, y + 6.4 * scale);
+		bar(x + .36 * scale, y + .16 * scale, x + .40 * scale, y + .20 * scale);
+		bar(x + .32 * scale, y + .20 * scale, x + .36 * scale, y + .64 * scale);
+		bar(x + .36 * scale, y + .56 * scale, x + .40 * scale, y + .64 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().darkBlue);
-		bar(x + 4.0 * scale, y + 1.6 * scale, x + 5.2 * scale, y + 2.0 * scale);
-		bar(x + 3.6 * scale, y + 2.0 * scale, x + 9.2 * scale, y + 2.8 * scale);
-		bar(x + 3.6 * scale, y + 2.8 * scale, x + 5.2 * scale, y + 3.2 * scale);
-		bar(x + 3.6 * scale, y + 3.2 * scale, x + 4.8 * scale, y + 5.6 * scale);
-		bar(x + 4.0 * scale, y + 4.8 * scale, x + 6.0 * scale, y + 6.4 * scale);
-		bar(x + 8.8 * scale, y + 4.8 * scale, x + 9.2 * scale, y + 5.2 * scale);
-		bar(x + 3.6 * scale, y + 7.6 * scale, x + 8.4 * scale, y + 8.8 * scale);
+		bar(x + .40 * scale, y + .16 * scale, x + .52 * scale, y + .20 * scale);
+		bar(x + .36 * scale, y + .20 * scale, x + .92 * scale, y + .28 * scale);
+		bar(x + .36 * scale, y + .28 * scale, x + .52 * scale, y + .32 * scale);
+		bar(x + .36 * scale, y + .32 * scale, x + .48 * scale, y + .56 * scale);
+		bar(x + .40 * scale, y + .48 * scale, x + .60 * scale, y + .64 * scale);
+		bar(x + .88 * scale, y + .48 * scale, x + .92 * scale, y + .52 * scale);
+		bar(x + .36 * scale, y + .76 * scale, x + .84 * scale, y + .88 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().grayBlue);
-		bar(x + 4.6 * scale, y + 5.6 * scale, x + 5.6 * scale, y + 6.0 * scale);
-		bar(x + 5.0 * scale, y + 6.0 * scale, x + 5.6 * scale, y + 6.4 * scale);
-		bar(x + 5.8 * scale, y + 6.0 * scale, x + 6.8 * scale, y + 8.6 * scale);
-		bar(x + 7.2 * scale, y + 8.0 * scale, x + 8.4 * scale, y + 8.6 * scale);
-		bar(x + 8.0 * scale, y + 7.6 * scale, x + 8.4 * scale, y + 8.0 * scale);
+		bar(x + .46 * scale, y + .56 * scale, x + .56 * scale, y + .60 * scale);
+		bar(x + .50 * scale, y + .60 * scale, x + .56 * scale, y + .64 * scale);
+		bar(x + .58 * scale, y + .60 * scale, x + .68 * scale, y + .86 * scale);
+		bar(x + .72 * scale, y + .80 * scale, x + .84 * scale, y + .86 * scale);
+		bar(x + .80 * scale, y + .76 * scale, x + .84 * scale, y + .80 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().blue);
-		bar(x + 3.6 * scale, y + 7.6 * scale, x + 4.0 * scale, y + 8.4 * scale);
-		bar(x + 8.0 * scale, y + 8.4 * scale, x + 8.4 * scale, y + 8.8 * scale);
+		bar(x + .36 * scale, y + .76 * scale, x + .40 * scale, y + .84 * scale);
+		bar(x + .80 * scale, y + .84 * scale, x + .84 * scale, y + .88 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().lightBlue);
-		bar(x + 7.6 * scale, y + 7.6 * scale, x + 8.0 * scale, y + 8.0 * scale);
-		bar(x + 6.8 * scale, y + 8.0 * scale, x + 7.6 * scale, y + 8.4 * scale);
-		bar(x + 6.2 * scale, y + 7.6 * scale, x + 6.8 * scale, y + 8.0 * scale);
+		bar(x + .76 * scale, y + .76 * scale, x + .80 * scale, y + .80 * scale);
+		bar(x + .68 * scale, y + .80 * scale, x + .76 * scale, y + .84 * scale);
+		bar(x + .62 * scale, y + .76 * scale, x + .68 * scale, y + .80 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().pink);
-		bar(x + 5.4 * scale, y + 3.6 * scale, x + 9.2 * scale, y + 4.8 * scale);
+		bar(x + .54 * scale, y + .36 * scale, x + .92 * scale, y + .48 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().orange);
-		bar(x + 4.6 * scale, y + 3.2 * scale, x + 5.0 * scale, y + 4.8 * scale);
-		bar(x + 5.0 * scale, y + 2.8 * scale, x + 5.4 * scale, y + 3.2 * scale);
-		bar(x + 8.4 * scale, y + 2.8 * scale, x + 9.2 * scale, y + 3.2 * scale);
-		bar(x + 9.2 * scale, y + 3.2 * scale, x + 9.6 * scale, y + 4.4 * scale);
-		bar(x + 8.0 * scale, y + 4.4 * scale, x + 8.4 * scale, y + 6.4 * scale);
+		bar(x + .46 * scale, y + .32 * scale, x + .50 * scale, y + .48 * scale);
+		bar(x + .50 * scale, y + .28 * scale, x + .54 * scale, y + .32 * scale);
+		bar(x + .84 * scale, y + .28 * scale, x + .92 * scale, y + .32 * scale);
+		bar(x + .92 * scale, y + .32 * scale, x + .96 * scale, y + .44 * scale);
+		bar(x + .80 * scale, y + .44 * scale, x + .84 * scale, y + .64 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().lightOrange);
-		bar(x + 5.4 * scale, y + 2.8 * scale, x + 8.4 * scale, y + 3.2 * scale);
-		bar(x + 5.0 * scale, y + 3.2 * scale, x + 5.4 * scale, y + 4.8 * scale);
-		bar(x + 5.4 * scale, y + 4.4 * scale, x + 6.4 * scale, y + 4.8 * scale);
-		bar(x + 6.0 * scale, y + 4.8 * scale, x + 6.4 * scale, y + 6.4 * scale);
-		bar(x + 8.4 * scale, y + 4.4 * scale, x + 9.6 * scale, y + 4.8 * scale);
-		bar(x + 8.4 * scale, y + 4.8 * scale, x + 8.8 * scale, y + 6.4 * scale);
+		bar(x + .54 * scale, y + .28 * scale, x + .84 * scale, y + .32 * scale);
+		bar(x + .50 * scale, y + .32 * scale, x + .54 * scale, y + .48 * scale);
+		bar(x + .54 * scale, y + .44 * scale, x + .64 * scale, y + .48 * scale);
+		bar(x + .60 * scale, y + .48 * scale, x + .64 * scale, y + .64 * scale);
+		bar(x + .84 * scale, y + .44 * scale, x + .96 * scale, y + .48 * scale);
+		bar(x + .84 * scale, y + .48 * scale, x + .88 * scale, y + .64 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().lightYellow);
-		bar(x + 7.6 * scale, y + 2.8 * scale, x + 8.0 * scale, y + 3.2 * scale);
-		bar(x + 6.0 * scale, y + 2.8 * scale, x + 7.2 * scale, y + 3.2 * scale);
+		bar(x + .76 * scale, y + .28 * scale, x + .80 * scale, y + .32 * scale);
+		bar(x + .60 * scale, y + .28 * scale, x + .72 * scale, y + .32 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().brown);
-		bar(x + 5.4 * scale, y + 3.2 * scale, x + 9.2 * scale, y + 3.6 * scale);
-		bar(x + 8.8 * scale, y + 3.6 * scale, x + 9.2 * scale, y + 4.4 * scale);
+		bar(x + .54 * scale, y + .32 * scale, x + .92 * scale, y + .36 * scale);
+		bar(x + .88 * scale, y + .36 * scale, x + .92 * scale, y + .44 * scale);
 
 		setfillstyle(SOLID_FILL, BLACK);
-		bar(x + 8.0 * scale, y + 3.6 * scale, x + 8.4 * scale, y + 4.4 * scale);
-		bar(x + 6.0 * scale, y + 3.6 * scale, x + 6.4 * scale, y + 4.4 * scale);
+		bar(x + .80 * scale, y + .36 * scale, x + .84 * scale, y + .44 * scale);
+		bar(x + .60 * scale, y + .36 * scale, x + .64 * scale, y + .44 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().skin);
-		bar(x + 6.4 * scale, y + 4.8 * scale, x + 8.0 * scale, y + 6.4 * scale);
+		bar(x + .64 * scale, y + .48 * scale, x + .80 * scale, y + .64 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().red);
 		//mouth
-		bar(x + 6.8 * scale, y + 5.2 * scale, x + 7.6 * scale, y + 5.6 * scale);
+		bar(x + .68 * scale, y + .52 * scale, x + .76 * scale, y + .56 * scale);
 		//Chalina
-		bar(x + 2.4 * scale, y + 6.4 * scale, x + 8.8 * scale, y + 7.6 * scale);
-		bar(x + 2.0 * scale, y + 6.8 * scale, x + 2.8 * scale, y + 8.8 * scale);
-		bar(x + 1.6 * scale, y + 8.8 * scale, x + 2.4 * scale, y + 9.2 * scale);
-		bar(x + .4 * scale, y + 9.2 * scale, x + 1.8 * scale, y + 9.6 * scale);
+		bar(x + .24 * scale, y + .64 * scale, x + .88 * scale, y + .76 * scale);
+		bar(x + .20 * scale, y + .68 * scale, x + .28 * scale, y + .88 * scale);
+		bar(x + .16 * scale, y + .88 * scale, x + .24 * scale, y + .92 * scale);
+		bar(x + .04 * scale, y + .92 * scale, x + .18 * scale, y + .96 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().darkRed);
-		bar(x + 8.4 * scale, y + 7.2 * scale, x + 8.8 * scale, y + 7.6 * scale);
-		bar(x + 2.8 * scale, y + 6.8 * scale, x + 3.6 * scale, y + 7.2 * scale);
-		bar(x + 2.6 * scale, y + 7.2 * scale, x + 3.2 * scale, y + 7.6 * scale);
-		bar(x + 2.6 * scale, y + 7.6 * scale, x + 2.8 * scale, y + 9.2 * scale);
-		bar(x + 2.2 * scale, y + 8.8 * scale, x + 2.8 * scale, y + 9.2 * scale);
-		bar(x + 1.8 * scale, y + 9.2 * scale, x + 2.4 * scale, y + 9.6 * scale);
-		bar(x + 1.6 * scale, y + 8.0 * scale, x + 2.0 * scale, y + 8.8 * scale);
-		bar(x + 1.2 * scale, y + 8.8 * scale, x + 1.6 * scale, y + 9.2 * scale);
+		bar(x + .84 * scale, y + .72 * scale, x + .88 * scale, y + .76 * scale);
+		bar(x + .28 * scale, y + .68 * scale, x + .36 * scale, y + .72 * scale);
+		bar(x + .26 * scale, y + .72 * scale, x + .32 * scale, y + .76 * scale);
+		bar(x + .26 * scale, y + .76 * scale, x + .28 * scale, y + .92 * scale);
+		bar(x + .22 * scale, y + .88 * scale, x + .28 * scale, y + .92 * scale);
+		bar(x + .18 * scale, y + .92 * scale, x + .24 * scale, y + .96 * scale);
+		bar(x + .16 * scale, y + .80 * scale, x + .20 * scale, y + .88 * scale);
+		bar(x + .12 * scale, y + .88 * scale, x + .16 * scale, y + .92 * scale);
 
 		setfillstyle(SOLID_FILL, knightPalette().hardOrange);
-		bar(x + 5.6 * scale, y + 6.4 * scale, x + 8.4 * scale, y + 6.8 * scale);
-		bar(x + 4.8 * scale, y + 6.8 * scale, x + 8.0 * scale, y + 7.2 * scale);
+		bar(x + .56 * scale, y + .64 * scale, x + .84 * scale, y + .68 * scale);
+		bar(x + .48 * scale, y + .68 * scale, x + .80 * scale, y + .72 * scale);
 	}
 
 
 	void grandSlimeRight(int x, int y)
 	{
 		int a = 0, x1, y1, x2, y2, x3, y3, x4, y4;
-		int scale = m_scale;
+		int scale = 0.6 * m_scale;
 
 		setcolor(a);
 		//Cuerpo
 		setlinestyle(0, 0, 2);
 		setfillstyle(SOLID_FILL, RED);
-		ellipse(x + 6 * scale, y + 7.8 * scale, 0, 180, 6 * scale, 7.2 * scale);
-		ellipse(x + 6 * scale, y + 7.8 * scale, 180, 360, 6 * scale, 4.8 * scale);
-		floodfill(x + 6 * scale, y + 8 * scale, a);
+		ellipse(x + .6 * scale, y + .78 * scale, 0, 180, .6 * scale, .72 * scale);
+		ellipse(x + .6 * scale, y + .78 * scale, 180, 360, .6 * scale, .48 * scale);
+		floodfill(x + .6 * scale, y + .8 * scale, a);
 
 		setlinestyle(0, 0, 0);
 
@@ -369,117 +369,117 @@ public:
 		scale_morado color_m;
 
 		setfillstyle(SOLID_FILL, scale_azul().RoyalBlue);
-		fillellipse(x + 6.6 * scale, y + 3.5 * scale, 3.2 * scale, 2.5 * scale);
+		fillellipse(x + .66 * scale, y + .35 * scale, .32 * scale, .25 * scale);
 		setfillstyle(SOLID_FILL, color_m.BlueViolet);
-		fillellipse(x + 7 * scale, y + 3 * scale, 1.5 * scale, 1.5 * scale);
+		fillellipse(x + .7 * scale, y + .3 * scale, .15 * scale, .15 * scale);
 		setfillstyle(SOLID_FILL, color_m.DarkPurple);
-		fillellipse(x + 7 * scale, y + 3 * scale, 1.4 * scale, 1.4 * scale);
+		fillellipse(x + .7 * scale, y + .3 * scale, .14 * scale, .14 * scale);
 
 		//Ojo D
 
 		setcolor(BLACK);
 		setlinestyle(0, 0, 2);
 		setfillstyle(SOLID_FILL, YELLOW);
-		ellipse(x + 7.9 * scale, y + 6.4 * scale, 180, 360, 0.6 * scale, 0.5 * scale);
-		getxy(x + 7.9 * scale, y + 6.4 * scale, 0.6 * scale, 180, x1, y1);
-		getxy(x + 7.9 * scale, y + 6.4 * scale, 0.6 * scale, 360, x2, y2);
-		sector(x + 7.9 * scale, y + 6.4 * scale, 180, 360, 0.6 * scale, 0.5 * scale);
+		ellipse(x + .79 * scale, y + .64 * scale, 180, 360, 0.06 * scale, 0.05 * scale);
+		getxy(x + .79 * scale, y + .64 * scale, 0.06 * scale, 180, x1, y1);
+		getxy(x + .79 * scale, y + .64 * scale, 0.06 * scale, 360, x2, y2);
+		sector(x + .79 * scale, y + .64 * scale, 180, 360, 0.06 * scale, 0.05 * scale);
 
 		int ojo_D[] = {
 			static_cast<int>(x1),
 			static_cast<int>(y1),
-			static_cast<int>(x + 7.3 * scale),
-			static_cast<int>(y + 5.4 * scale),
-			static_cast<int>(x + 8.8 * scale),
-			static_cast<int>(y + 3.9 * scale),
-			static_cast<int>(x + 8.8 * scale),
-			static_cast<int>(y + 5.5 * scale),
+			static_cast<int>(x + .73 * scale),
+			static_cast<int>(y + .54 * scale),
+			static_cast<int>(x + .88 * scale),
+			static_cast<int>(y + .39 * scale),
+			static_cast<int>(x + .88 * scale),
+			static_cast<int>(y + .55 * scale),
 			static_cast<int>(x2),
 			static_cast<int>(y2)
 		};
 		fillpoly(5, ojo_D);
 
 		setcolor(YELLOW);
-		line(x + (7.9 - 0.5) * scale, y + 6.4 * scale, x + (7.9 + 0.5) * scale, y + 6.4 * scale);
+		line(x + .74 * scale, y + .64 * scale, x + .84 * scale, y + .64 * scale);
 
 		//Ojo I
 		setcolor(BLACK);
 		setlinestyle(0, 0, 2);
 		setfillstyle(SOLID_FILL, YELLOW);
-		ellipse(x + 5.6 * scale, y + 6.5 * scale, 180, 360, 0.6 * scale, 0.5 * scale);
-		getxy(x + 5.6 * scale, y + 6.5 * scale, 0.6 * scale, 180, x3, y3);
-		getxy(x + 5.6 * scale, y + 6.5 * scale, 0.6 * scale, 360, x4, y4);
-		sector(x + 5.6 * scale, y + 6.5 * scale, 180, 360, 0.6 * scale, 0.5 * scale);
+		ellipse(x + .56 * scale, y + .65 * scale, 180, 360, 0.06 * scale, 0.05 * scale);
+		getxy(x + .56 * scale, y + .65 * scale, 0.06 * scale, 180, x3, y3);
+		getxy(x + .56 * scale, y + .65 * scale, 0.06 * scale, 360, x4, y4);
+		sector(x + .56 * scale, y + .65 * scale, 180, 360, 0.06 * scale, 0.05 * scale);
 
 		int ojo_I[] = {
 			static_cast<int>(x3),
 			static_cast<int>(y3),
-			static_cast<int>(x + 4.5 * scale),
-			static_cast<int>(y + 5.4 * scale),
-			static_cast<int>(x + 4.8 * scale),
-			static_cast<int>(y + 3.7 * scale),
-			static_cast<int>(x + 6.1 * scale),
-			static_cast<int>(y + 5.3 * scale),
+			static_cast<int>(x + .45 * scale),
+			static_cast<int>(y + .54 * scale),
+			static_cast<int>(x + .48 * scale),
+			static_cast<int>(y + .37 * scale),
+			static_cast<int>(x + .61 * scale),
+			static_cast<int>(y + .53 * scale),
 			static_cast<int>(x4),
 			static_cast<int>(y4)
 		};
 		fillpoly(5, ojo_I);
 
 		setcolor(YELLOW);
-		line(x + (5.6 - 0.5) * scale, y + 6.5 * scale, x + (5.6 + 0.5) * scale, y + 6.5 * scale);
+		line(x + .51 * scale, y + .65 * scale, x + .61 * scale, y + .65 * scale);
 
 		//boca
 		setcolor(BLACK);
 		setfillstyle(SOLID_FILL, BLACK);
 
 		int boca[] = {
-			static_cast<int>(x + 2.5 * scale),static_cast<int>(y + 7.3 * scale),
-			static_cast<int>(x + 3 * scale),static_cast<int>(y + 6.5 * scale),
-			static_cast<int>(x + 3.2 * scale),static_cast<int>(y + 8 * scale),
-			static_cast<int>(x + 4 * scale),static_cast<int>(y + 7 * scale),
-			static_cast<int>(x + 4.6 * scale),static_cast<int>(y + 7.4 * scale),
-			static_cast<int>(x + 5 * scale),static_cast<int>(y + 9.2 * scale),
-			static_cast<int>(x + 5.5 * scale),static_cast<int>(y + 7.7 * scale),
-			static_cast<int>(x + 6.2 * scale),static_cast<int>(y + 9.6 * scale),
-			static_cast<int>(x + 7 * scale),static_cast<int>(y + 7.5 * scale),
-			static_cast<int>(x + 7.5 * scale),static_cast<int>(y + 9.5 * scale),
-			static_cast<int>(x + 8.2 * scale),static_cast<int>(y + 7.6 * scale),
-			static_cast<int>(x + 8.5 * scale),static_cast<int>(y + 9.2 * scale), //
-			static_cast<int>(x + 9.5 * scale),static_cast<int>(y + 7 * scale),
-			static_cast<int>(x + 9.7 * scale),static_cast<int>(y + 8.6 * scale), //
-			static_cast<int>(x + 10.4 * scale),static_cast<int>(y + 7.5 * scale),
-			static_cast<int>(x + 10.6 * scale),static_cast<int>(y + 8 * scale),
-			static_cast<int>(x + 9.8 * scale),static_cast<int>(y + 9.6 * scale),
-			static_cast<int>(x + 9.7 * scale),static_cast<int>(y + 8.7 * scale),
-			static_cast<int>(x + 9 * scale),static_cast<int>(y + 10.5 * scale),
-			static_cast<int>(x + 8.5 * scale),static_cast<int>(y + 9.3 * scale),
-			static_cast<int>(x + 7.7 * scale),static_cast<int>(y + 10.8 * scale),
-			static_cast<int>(x + 7.4 * scale),static_cast<int>(y + 10.4 * scale),
-			static_cast<int>(x + 6.7 * scale),static_cast<int>(y + 10.8 * scale),
-			static_cast<int>(x + 6.3 * scale),static_cast<int>(y + 10.2 * scale),
-			static_cast<int>(x + 5.3 * scale),static_cast<int>(y + 10.9 * scale),
-			static_cast<int>(x + 4.8 * scale),static_cast<int>(y + 9.7 * scale),
-			static_cast<int>(x + 4 * scale),static_cast<int>(y + 10.6 * scale),
-			static_cast<int>(x + 3.4 * scale),static_cast<int>(y + 9 * scale),
-			static_cast<int>(x + 3 * scale),static_cast<int>(y + 9.6 * scale),
-			static_cast<int>(x + 3 * scale),static_cast<int>(y + 8.2 * scale),
-			static_cast<int>(x + 2 * scale),static_cast<int>(y + 8.6 * scale),
-			static_cast<int>(x + 1.9 * scale),static_cast<int>(y + 7.6 * scale),
+			static_cast<int>(x + .25 * scale),static_cast<int>(y + .73 * scale),
+			static_cast<int>(x + .3 * scale),static_cast<int>(y + .65 * scale),
+			static_cast<int>(x + .32 * scale),static_cast<int>(y + .8 * scale),
+			static_cast<int>(x + .4 * scale),static_cast<int>(y + .7 * scale),
+			static_cast<int>(x + .46 * scale),static_cast<int>(y + .74 * scale),
+			static_cast<int>(x + .5 * scale),static_cast<int>(y + .92 * scale),
+			static_cast<int>(x + .55 * scale),static_cast<int>(y + .77 * scale),
+			static_cast<int>(x + .62 * scale),static_cast<int>(y + .96 * scale),
+			static_cast<int>(x + .7 * scale),static_cast<int>(y + .75 * scale),
+			static_cast<int>(x + .75 * scale),static_cast<int>(y + .95 * scale),
+			static_cast<int>(x + .82 * scale),static_cast<int>(y + .76 * scale),
+			static_cast<int>(x + .85 * scale),static_cast<int>(y + .92 * scale), //
+			static_cast<int>(x + .95 * scale),static_cast<int>(y + .7 * scale),
+			static_cast<int>(x + .97 * scale),static_cast<int>(y + .86 * scale), //
+			static_cast<int>(x + 1.04 * scale),static_cast<int>(y + .75 * scale),
+			static_cast<int>(x + 1.06 * scale),static_cast<int>(y + .8 * scale),
+			static_cast<int>(x + .98 * scale),static_cast<int>(y + .96 * scale),
+			static_cast<int>(x + .97 * scale),static_cast<int>(y + .87 * scale),
+			static_cast<int>(x + .9 * scale),static_cast<int>(y + 1.05 * scale),
+			static_cast<int>(x + .85 * scale),static_cast<int>(y + .93 * scale),
+			static_cast<int>(x + .77 * scale),static_cast<int>(y + 1.08 * scale),
+			static_cast<int>(x + .74 * scale),static_cast<int>(y + 1.04 * scale),
+			static_cast<int>(x + .67 * scale),static_cast<int>(y + 1.08 * scale),
+			static_cast<int>(x + .63 * scale),static_cast<int>(y + 1.02 * scale),
+			static_cast<int>(x + .53 * scale),static_cast<int>(y + 1.09 * scale),
+			static_cast<int>(x + .48 * scale),static_cast<int>(y + .97 * scale),
+			static_cast<int>(x + .4 * scale),static_cast<int>(y + 1.06 * scale),
+			static_cast<int>(x + .34 * scale),static_cast<int>(y + .9 * scale),
+			static_cast<int>(x + .3 * scale),static_cast<int>(y + .96 * scale),
+			static_cast<int>(x + .3 * scale),static_cast<int>(y + .82 * scale),
+			static_cast<int>(x + .2 * scale),static_cast<int>(y + .86 * scale),
+			static_cast<int>(x + .19 * scale),static_cast<int>(y + .76 * scale),
 		};
 		fillpoly(32, boca);
 	}
 	void grandSlimeLeft(int x, int y)
 	{
 		int a = 0, x1, y1, x2, y2, x3, y3, x4, y4;
-		int scale = m_scale;
+		int scale = 0.6 * m_scale;
 
 		setcolor(a);
 		//Cuerpo
 		setlinestyle(0, 0, 2);
 		setfillstyle(SOLID_FILL, RED);
-		ellipse(x + 6.1 * scale, y + 7.8 * scale, 0, 180, 6 * scale, 7.2 * scale);
-		ellipse(x + 6.1 * scale, y + 7.8 * scale, 180, 360, 6 * scale, 4.8 * scale);
-		floodfill(x + 6.1 * scale, y + 8 * scale, a);
+		ellipse(x + .61 * scale, y + .78 * scale, 0, 180, .6 * scale, .72 * scale);
+		ellipse(x + .61 * scale, y + .78 * scale, 180, 360, .6 * scale, .48 * scale);
+		floodfill(x + .61 * scale, y + .8 * scale, a);
 
 		setlinestyle(0, 0, 0);
 
@@ -487,102 +487,102 @@ public:
 		scale_morado color_m;
 
 		setfillstyle(SOLID_FILL, scale_azul().RoyalBlue);
-		fillellipse(x + 5.5 * scale, y + 3.5 * scale, 3.2 * scale, 2.5 * scale);
+		fillellipse(x + .55 * scale, y + .35 * scale, .32 * scale, .25 * scale);
 		setfillstyle(SOLID_FILL, color_m.BlueViolet);
-		fillellipse(x + 5.1 * scale, y + 3 * scale, 1.5 * scale, 1.5 * scale);
+		fillellipse(x + .51 * scale, y + .3 * scale, .15 * scale, .15 * scale);
 		setfillstyle(SOLID_FILL, color_m.DarkPurple);
-		fillellipse(x + 5.1 * scale, y + 3 * scale, 1.4 * scale, 1.4 * scale);
+		fillellipse(x + .51 * scale, y + .3 * scale, .14 * scale, .14 * scale);
 
 		//Ojo D
 
 		setcolor(BLACK);
 		setlinestyle(0, 0, 2);
 		setfillstyle(SOLID_FILL, YELLOW);
-		ellipse(x + 4.2 * scale, y + 6.4 * scale, 180, 360, 0.6 * scale, 0.5 * scale);
-		getxy(x + 4.2 * scale, y + 6.4 * scale, 0.6 * scale, 180, x1, y1);
-		getxy(x + 4.2 * scale, y + 6.4 * scale, 0.6 * scale, 360, x2, y2);
-		sector(x + 4.2 * scale, y + 6.4 * scale, 180, 360, 0.6 * scale, 0.5 * scale);
+		ellipse(x + .42 * scale, y + .64 * scale, 180, 360, 0.06 * scale, 0.05 * scale);
+		getxy(x + .42 * scale, y + .64 * scale, 0.06 * scale, 180, x1, y1);
+		getxy(x + .42 * scale, y + .64 * scale, 0.06 * scale, 360, x2, y2);
+		sector(x + .42 * scale, y + .64 * scale, 180, 360, 0.06 * scale, 0.05 * scale);
 
 		int ojo_D[] = {
 			static_cast<int>(x2),
 			static_cast<int>(y2),
-			static_cast<int>(x + 4.8 * scale),
-			static_cast<int>(y + 5.4 * scale),
-			static_cast<int>(x + 3.3 * scale),
-			static_cast<int>(y + 3.9 * scale),
-			static_cast<int>(x + 3.3 * scale),
-			static_cast<int>(y + 5.5 * scale),
+			static_cast<int>(x + .48 * scale),
+			static_cast<int>(y + .54 * scale),
+			static_cast<int>(x + .33 * scale),
+			static_cast<int>(y + .39 * scale),
+			static_cast<int>(x + .33 * scale),
+			static_cast<int>(y + .55 * scale),
 			static_cast<int>(x1),
 			static_cast<int>(y1)
 		};
 		fillpoly(5, ojo_D);
 
 		setcolor(YELLOW);
-		line(x + 4.7 * scale, y + 6.4 * scale, x + 3.7 * scale, y + 6.4 * scale);
+		line(x + .47 * scale, y + .64 * scale, x + .37 * scale, y + .64 * scale);
 
 		//Ojo I
 		setcolor(BLACK);
 		setlinestyle(0, 0, 2);
 		setfillstyle(SOLID_FILL, YELLOW);
-		ellipse(x + 6.5 * scale, y + 6.5 * scale, 180, 360, 0.6 * scale, 0.5 * scale);
-		getxy(x + 6.5 * scale, y + 6.5 * scale, 0.6 * scale, 180, x3, y3);
-		getxy(x + 6.5 * scale, y + 6.5 * scale, 0.6 * scale, 360, x4, y4);
-		sector(x + 6.5 * scale, y + 6.5 * scale, 180, 360, 0.6 * scale, 0.5 * scale);
+		ellipse(x + .65 * scale, y + .65 * scale, 180, 360, 0.06 * scale, 0.05 * scale);
+		getxy(x + .65 * scale, y + .65 * scale, 0.06 * scale, 180, x3, y3);
+		getxy(x + .65 * scale, y + .65 * scale, 0.06 * scale, 360, x4, y4);
+		sector(x + .65 * scale, y + .65 * scale, 180, 360, 0.06 * scale, 0.05 * scale);
 
 		int ojo_I[] = {
 			static_cast<int>(x4),
 			static_cast<int>(y4),
-			static_cast<int>(x + 7.6 * scale),
-			static_cast<int>(y + 5.4 * scale),
-			static_cast<int>(x + 7.3 * scale),
-			static_cast<int>(y + 3.7 * scale),
-			static_cast<int>(x + 6 * scale),
-			static_cast<int>(y + 5.3 * scale),
+			static_cast<int>(x + .76 * scale),
+			static_cast<int>(y + .54 * scale),
+			static_cast<int>(x + .73 * scale),
+			static_cast<int>(y + .37 * scale),
+			static_cast<int>(x + .6 * scale),
+			static_cast<int>(y + .53 * scale),
 			static_cast<int>(x3),
 			static_cast<int>(y3)
 		};
 		fillpoly(5, ojo_I);
 
 		setcolor(YELLOW);
-		line(x + 7 * scale, y + 6.5 * scale, x + 6 * scale, y + 6.5 * scale);
+		line(x + .7 * scale, y + .65 * scale, x + .6 * scale, y + .65 * scale);
 
 		//boca
 		setcolor(BLACK);
 		setfillstyle(SOLID_FILL, BLACK);
 
 		int boca[] = {
-			static_cast<int>(x + 9.6 * scale),static_cast<int>(y + 7.3 * scale),
-			static_cast<int>(x + 9.1 * scale),static_cast<int>(y + 6.5 * scale),
-			static_cast<int>(x + 8.9 * scale),static_cast<int>(y + 8 * scale),
-			static_cast<int>(x + 8.1 * scale),static_cast<int>(y + 7 * scale),
-			static_cast<int>(x + 7.5 * scale),static_cast<int>(y + 7.4 * scale),
-			static_cast<int>(x + 7.1 * scale),static_cast<int>(y + 9.2 * scale),
-			static_cast<int>(x + 6.6 * scale),static_cast<int>(y + 7.7 * scale),
-			static_cast<int>(x + 5.9 * scale),static_cast<int>(y + 9.6 * scale),
-			static_cast<int>(x + 5.1 * scale),static_cast<int>(y + 7.5 * scale),
-			static_cast<int>(x + 4.6 * scale),static_cast<int>(y + 9.5 * scale),
-			static_cast<int>(x + 3.9 * scale),static_cast<int>(y + 7.6 * scale),
-			static_cast<int>(x + 3.6 * scale),static_cast<int>(y + 9.2 * scale), //
-			static_cast<int>(x + 2.6 * scale),static_cast<int>(y + 7 * scale),
-			static_cast<int>(x + 2.4 * scale),static_cast<int>(y + 8.6 * scale), //
-			static_cast<int>(x + 1.7 * scale),static_cast<int>(y + 7.5 * scale),
-			static_cast<int>(x + 1.5 * scale),static_cast<int>(y + 8 * scale),
-			static_cast<int>(x + 2.3 * scale),static_cast<int>(y + 9.6 * scale),
-			static_cast<int>(x + 2.4 * scale),static_cast<int>(y + 8.7 * scale),
-			static_cast<int>(x + 3.1 * scale),static_cast<int>(y + 10.5 * scale),
-			static_cast<int>(x + 3.6 * scale),static_cast<int>(y + 9.3 * scale),
-			static_cast<int>(x + 4.4 * scale),static_cast<int>(y + 10.8 * scale),
-			static_cast<int>(x + 4.7 * scale),static_cast<int>(y + 10.4 * scale),
-			static_cast<int>(x + 5.4 * scale),static_cast<int>(y + 10.8 * scale),
-			static_cast<int>(x + 5.8 * scale),static_cast<int>(y + 10.2 * scale),
-			static_cast<int>(x + 6.8 * scale),static_cast<int>(y + 10.9 * scale),
-			static_cast<int>(x + 7.3 * scale),static_cast<int>(y + 9.7 * scale),
-			static_cast<int>(x + 8.1 * scale),static_cast<int>(y + 10.6 * scale),
-			static_cast<int>(x + 8.7 * scale),static_cast<int>(y + 9 * scale),
-			static_cast<int>(x + 9.1 * scale),static_cast<int>(y + 9.6 * scale),
-			static_cast<int>(x + 9.1 * scale),static_cast<int>(y + 8.2 * scale),
-			static_cast<int>(x + 10.1 * scale),static_cast<int>(y + 8.6 * scale),
-			static_cast<int>(x + 10.2 * scale),static_cast<int>(y + 7.6 * scale),
+			static_cast<int>(x + .96 * scale),static_cast<int>(y + .73 * scale),
+			static_cast<int>(x + .91 * scale),static_cast<int>(y + .65 * scale),
+			static_cast<int>(x + .89 * scale),static_cast<int>(y + .8 * scale),
+			static_cast<int>(x + .81 * scale),static_cast<int>(y + .7 * scale),
+			static_cast<int>(x + .75 * scale),static_cast<int>(y + .74 * scale),
+			static_cast<int>(x + .71 * scale),static_cast<int>(y + .92 * scale),
+			static_cast<int>(x + .66 * scale),static_cast<int>(y + .77 * scale),
+			static_cast<int>(x + .59 * scale),static_cast<int>(y + .96 * scale),
+			static_cast<int>(x + .51 * scale),static_cast<int>(y + .75 * scale),
+			static_cast<int>(x + .46 * scale),static_cast<int>(y + .95 * scale),
+			static_cast<int>(x + .39 * scale),static_cast<int>(y + .76 * scale),
+			static_cast<int>(x + .36 * scale),static_cast<int>(y + .92 * scale), //
+			static_cast<int>(x + .26 * scale),static_cast<int>(y + .7 * scale),
+			static_cast<int>(x + .24 * scale),static_cast<int>(y + .86 * scale), //
+			static_cast<int>(x + .17 * scale),static_cast<int>(y + .75 * scale),
+			static_cast<int>(x + .15 * scale),static_cast<int>(y + .8 * scale),
+			static_cast<int>(x + .23 * scale),static_cast<int>(y + .96 * scale),
+			static_cast<int>(x + .24 * scale),static_cast<int>(y + .87 * scale),
+			static_cast<int>(x + .31 * scale),static_cast<int>(y + 1.05 * scale),
+			static_cast<int>(x + .36 * scale),static_cast<int>(y + .93 * scale),
+			static_cast<int>(x + .44 * scale),static_cast<int>(y + 1.08 * scale),
+			static_cast<int>(x + .47 * scale),static_cast<int>(y + 1.04 * scale),
+			static_cast<int>(x + .54 * scale),static_cast<int>(y + 1.08 * scale),
+			static_cast<int>(x + .58 * scale),static_cast<int>(y + 1.02 * scale),
+			static_cast<int>(x + .68 * scale),static_cast<int>(y + 1.09 * scale),
+			static_cast<int>(x + .73 * scale),static_cast<int>(y + .97 * scale),
+			static_cast<int>(x + .81 * scale),static_cast<int>(y + 1.06 * scale),
+			static_cast<int>(x + .87 * scale),static_cast<int>(y + .9 * scale),
+			static_cast<int>(x + .91 * scale),static_cast<int>(y + .96 * scale),
+			static_cast<int>(x + .91 * scale),static_cast<int>(y + .82 * scale),
+			static_cast<int>(x + 1.01 * scale),static_cast<int>(y + .86 * scale),
+			static_cast<int>(x + 1.02 * scale),static_cast<int>(y + .76 * scale),
 		};
 		fillpoly(32, boca);
 	}
@@ -600,36 +600,36 @@ void heroe_D(int x,int y)
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, color.DeepPink);
     int hair[] = {
-        static_cast<int>(x+3.7*scale),
-        static_cast<int>(y+8.5*scale),
-        static_cast<int>(x+1*scale),
-        static_cast<int>(y+8.6*scale),
-        static_cast<int>(x+0.4*scale),
-        static_cast<int>(y+8*scale),
-        static_cast<int>(x+0.4*scale),
-        static_cast<int>(y+6.7*scale),
-        static_cast<int>(x+1.7*scale),
-        static_cast<int>(y+7.5*scale),
-        static_cast<int>(x+2*scale),
-        static_cast<int>(y+5.3*scale),
-        static_cast<int>(x+3.7*scale),
-        static_cast<int>(y+5*scale)
+        static_cast<int>(x+.37*scale),
+        static_cast<int>(y+.85*scale),
+        static_cast<int>(x+.1*scale),
+        static_cast<int>(y+.86*scale),
+        static_cast<int>(x+.04*scale),
+        static_cast<int>(y+.8*scale),
+        static_cast<int>(x+.04*scale),
+        static_cast<int>(y+.67*scale),
+        static_cast<int>(x+.17*scale),
+        static_cast<int>(y+.75*scale),
+        static_cast<int>(x+.2*scale),
+        static_cast<int>(y+.53*scale),
+        static_cast<int>(x+.37*scale),
+        static_cast<int>(y+.5*scale)
         };
     fillpoly(7, hair);
 
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, color.DeepPink);
     int hair_d[] = {
-        static_cast<int>(x+9.4*scale),
-        static_cast<int>(y+4.4*scale),
-        static_cast<int>(x+10.1*scale),
-        static_cast<int>(y+5.3*scale),
-        static_cast<int>(x+10.1*scale),
-        static_cast<int>(y+6.8*scale),
-        static_cast<int>(x+9*scale),
-        static_cast<int>(y+6.8*scale),
-        static_cast<int>(x+8.5*scale),
-        static_cast<int>(y+4.5*scale)
+        static_cast<int>(x+.94*scale),
+        static_cast<int>(y+.44*scale),
+        static_cast<int>(x+1.01*scale),
+        static_cast<int>(y+.53*scale),
+        static_cast<int>(x+1.01*scale),
+        static_cast<int>(y+.68*scale),
+        static_cast<int>(x+.9*scale),
+        static_cast<int>(y+.68*scale),
+        static_cast<int>(x+.85*scale),
+        static_cast<int>(y+.45*scale)
         };
     fillpoly(5, hair_d);
 
@@ -637,17 +637,17 @@ void heroe_D(int x,int y)
     setcolor(BLACK);
     setlinestyle(0,0,2);
     setfillstyle(SOLID_FILL, color.Wheat);
-    ellipse(x+6.3*scale,y+5.2*scale,360,180,2.7*scale,2.5*scale);
-    getxy(x+6.3*scale,y+5.2*scale,2.7*scale, 180,x1,y1);
-    getxy(x+6.3*scale,y+5.2*scale,2.7*scale, 360,x2,y2);
-    sector(x+6.3*scale,y+5.2*scale,360,180,2.7*scale,2.5*scale);
+    ellipse(x+.63*scale,y+.52*scale,360,180,.27*scale,.25*scale);
+    getxy(x+.63*scale,y+.52*scale,.27*scale, 180,x1,y1);
+    getxy(x+.63*scale,y+.52*scale,.27*scale, 360,x2,y2);
+    sector(x+.63*scale,y+.52*scale,360,180,.27*scale,.25*scale);
     
     setcolor(BLACK);
-    rectangle(x1,y1,x2,y+6.8*scale);
-    bar(x1,y1,x2,y+6.8*scale);
+    rectangle(x1,y1,x2,y+.68*scale);
+    bar(x1,y1,x2,y+.68*scale);
 
     setcolor(color.Wheat);
-    line(x1+0.2,y1,x2-0.2,y2);
+    line(x1+0.02,y1,x2-0.02,y2);
 
     setlinestyle(0,0,0);
 
@@ -655,64 +655,64 @@ void heroe_D(int x,int y)
     //Izquierdo
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, color.DeepPink);
-    rectangle(x+4.5*scale,y+5.2*scale,x+5.4*scale,y+5.6*scale);
-    bar(x+4.5*scale,y+5.2*scale,x+5.4*scale,y+5.6*scale);
+    rectangle(x+.45*scale,y+.52*scale,x+.54*scale,y+.56*scale);
+    bar(x+.45*scale,y+.52*scale,x+.54*scale,y+.56*scale);
 
     setfillstyle(SOLID_FILL, RED);
-    fillellipse(x+5.2*scale,y+6.4*scale,0.2*scale,0.6*scale);
+    fillellipse(x+.52*scale,y+.64*scale,0.02*scale,0.06*scale);
 
     //Derecho
     setfillstyle(SOLID_FILL, color.DeepPink);
-    rectangle(x+8.2*scale,y+5.2*scale,x+9*scale,y+5.6*scale);
-    bar(x+8.2*scale,y+5.2*scale,x+9*scale,y+5.6*scale);
+    rectangle(x+.82*scale,y+.52*scale,x+.9*scale,y+.56*scale);
+    bar(x+.82*scale,y+.52*scale,x+.9*scale,y+.56*scale);
 
     setfillstyle(SOLID_FILL, RED);
-    fillellipse(x+8.4*scale,y+6.4*scale,0.2*scale,0.6*scale);
+    fillellipse(x+.84*scale,y+.64*scale,0.02*scale,0.06*scale);
 
     //chalina
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, colorM.DarkBrown);
-    rectangle(x+2.2*scale,y+6.8*scale,x+10*scale,y+7.6*scale);
-    bar(x+2.2*scale,y+6.8*scale,x+10*scale,y+7.6*scale);
+    rectangle(x+.22*scale,y+.68*scale,x+.10*scale,y+.76*scale);
+    bar(x+.22*scale,y+.68*scale,x+.10*scale,y+.76*scale);
 
     setfillstyle(SOLID_FILL, color.HotPink);
-    rectangle(x+2.7*scale,y+7.5*scale,x+9.5*scale,y+8.4*scale);
-    bar(x+2.7*scale,y+7.5*scale,x+9.5*scale,y+8.4*scale);
+    rectangle(x+.27*scale,y+.75*scale,x+.95*scale,y+.84*scale);
+    bar(x+.27*scale,y+.75*scale,x+.95*scale,y+.84*scale);
 
     setfillstyle(SOLID_FILL, color.MediumBlue);
-    bar(x+5*scale,y+8.4*scale,x+7.8*scale,y+10.4*scale);
+    bar(x+.5*scale,y+.84*scale,x+.78*scale,y+1.04*scale);
 
     //Capa
 
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, colorM.DarkBrown);
     int capa_1[] = {
-        static_cast<int>(x+2.7*scale),
-        static_cast<int>(y+8.4*scale),
-        static_cast<int>(x+0.8*scale),
-        static_cast<int>(y+10.4*scale),
-        static_cast<int>(x+5.2*scale),
-        static_cast<int>(y+10.4*scale),
-        static_cast<int>(x+6.2*scale),
-        static_cast<int>(y+9.8*scale),
-        static_cast<int>(x+6.2*scale),
-        static_cast<int>(y+8.4*scale)
+        static_cast<int>(x+.27*scale),
+        static_cast<int>(y+.84*scale),
+        static_cast<int>(x+.08*scale),
+        static_cast<int>(y+1.04*scale),
+        static_cast<int>(x+.52*scale),
+        static_cast<int>(y+1.04*scale),
+        static_cast<int>(x+.62*scale),
+        static_cast<int>(y+.98*scale),
+        static_cast<int>(x+.62*scale),
+        static_cast<int>(y+.84*scale)
         };
     fillpoly(5, capa_1);
 
     int capa_2[] = {
-        static_cast<int>(x+9.5*scale),
-        static_cast<int>(y+8.4*scale),
-        static_cast<int>(x+10.3*scale),
-        static_cast<int>(y+9.7*scale),
-        static_cast<int>(x+9.4*scale),
-        static_cast<int>(y+10.4*scale),
-        static_cast<int>(x+7.7*scale),
-        static_cast<int>(y+10.4*scale),
-        static_cast<int>(x+7.2*scale),
-        static_cast<int>(y+9.8*scale),
-        static_cast<int>(x+7.2*scale),
-        static_cast<int>(y+8.4*scale)
+        static_cast<int>(x+.95*scale),
+        static_cast<int>(y+.84*scale),
+        static_cast<int>(x+1.03*scale),
+        static_cast<int>(y+.97*scale),
+        static_cast<int>(x+.94*scale),
+        static_cast<int>(y+1.04*scale),
+        static_cast<int>(x+.77*scale),
+        static_cast<int>(y+1.04*scale),
+        static_cast<int>(x+.72*scale),
+        static_cast<int>(y+.98*scale),
+        static_cast<int>(x+.72*scale),
+        static_cast<int>(y+.84*scale)
         };
     fillpoly(6, capa_2);
 
@@ -721,57 +721,57 @@ void heroe_D(int x,int y)
     setfillstyle(SOLID_FILL, colorM.DarkBrown);
     int hat[] = {
         static_cast<int>(x+ scale),
-        static_cast<int>(y+ 5.5*scale),
-        static_cast<int>(x+4*scale),
-        static_cast<int>(y+5*scale),
-        static_cast<int>(x+10.4*scale),
-        static_cast<int>(y+4.4*scale),
-        static_cast<int>(x+12*scale),
-        static_cast<int>(y+3.8*scale),
-        static_cast<int>(x+8.5*scale),
-        static_cast<int>(y+2.8*scale),
-        static_cast<int>(x+7.2*scale),
-        static_cast<int>(y+1.5*scale),
-        static_cast<int>(x+6.7*scale),
-        static_cast<int>(y+0.7*scale),
-        static_cast<int>(x+5.7*scale),
-        static_cast<int>(y+0.2*scale),
-        static_cast<int>(x+3.6*scale),
-        static_cast<int>(y+0.2*scale),
-        static_cast<int>(x+1.7*scale),
-        static_cast<int>(y+1.7*scale),
-        static_cast<int>(x+3.5*scale),
-        static_cast<int>(y+1.7*scale),
-        static_cast<int>(x+3.5*scale),
-        static_cast<int>(y+2.7*scale),
-        static_cast<int>(x+2.6*scale),
-        static_cast<int>(y+3.5*scale),
-        static_cast<int>(x+2.2*scale),
-        static_cast<int>(y+4*scale)
+        static_cast<int>(y+ .55*scale),
+        static_cast<int>(x+44*scale),
+        static_cast<int>(y+55*scale),
+        static_cast<int>(x+1.04*scale),
+        static_cast<int>(y+.44*scale),
+        static_cast<int>(x+1.2*scale),
+        static_cast<int>(y+.38*scale),
+        static_cast<int>(x+.85*scale),
+        static_cast<int>(y+.28*scale),
+        static_cast<int>(x+.72*scale),
+        static_cast<int>(y+.15*scale),
+        static_cast<int>(x+.67*scale),
+        static_cast<int>(y+.07*scale),
+        static_cast<int>(x+.57*scale),
+        static_cast<int>(y+.02*scale),
+        static_cast<int>(x+.36*scale),
+        static_cast<int>(y+.02*scale),
+        static_cast<int>(x+.17*scale),
+        static_cast<int>(y+.17*scale),
+        static_cast<int>(x+.35*scale),
+        static_cast<int>(y+.17*scale),
+        static_cast<int>(x+.35*scale),
+        static_cast<int>(y+.27*scale),
+        static_cast<int>(x+.26*scale),
+        static_cast<int>(y+.35*scale),
+        static_cast<int>(x+.22*scale),
+        static_cast<int>(y+.4*scale)
         };
     fillpoly(14, hat);
 
     setcolor(colorM.SaddleBrown);
     setfillstyle(SOLID_FILL, colorM.SaddleBrown);
     int hat_a[] = {
-        static_cast<int>(x+3.3*scale),
-        static_cast<int>(y+4.4*scale),
-        static_cast<int>(x+3.9*scale),
-        static_cast<int>(y+3.5*scale),
-        static_cast<int>(x+5*scale),
-        static_cast<int>(y+2.7*scale),
-        static_cast<int>(x+4.5*scale),
+        static_cast<int>(x+.33*scale),
+        static_cast<int>(y+.44*scale),
+        static_cast<int>(x+.39*scale),
+        static_cast<int>(y+.35*scale),
+        static_cast<int>(x+.5*scale),
+        static_cast<int>(y+.27*scale),
+        static_cast<int>(x+.45*scale),
         static_cast<int>(y+scale),
-        static_cast<int>(x+6.3*scale),
-        static_cast<int>(y+1.5*scale),
-        static_cast<int>(x+6.7*scale),
-        static_cast<int>(y+2.5*scale),
-        static_cast<int>(x+7.7*scale),
-        static_cast<int>(y+3.2*scale),
-        static_cast<int>(x+9.1*scale),
-        static_cast<int>(y+3.6*scale),
-        static_cast<int>(x+6.3*scale),
-        static_cast<int>(y+4*scale)
+        static_cast<int>(x+.63*scale),
+        static_cast<int>(y+.15*scale),
+        static_cast<int>(x+.67*scale),
+        static_cast<int>(y+.25*scale),
+        static_cast<int>(x+.77*scale),
+        static_cast<int>(y+.32*scale),
+        static_cast<int>(x+.91*scale),
+        static_cast<int>(y+.36*scale),
+        static_cast<int>(x+.63*scale),
+        static_cast<int>(y+.4*scale)
         };
     fillpoly(9, hat_a);
 
@@ -780,28 +780,28 @@ void heroe_D(int x,int y)
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, BLACK);
     int pie_I[] = {
-        static_cast<int>(x+3.1*scale),
-        static_cast<int>(y+10.4*scale),
-        static_cast<int>(x+3.1*scale),
-        static_cast<int>(y+11.6*scale),
-        static_cast<int>(x+4.1*scale),
-        static_cast<int>(y+11.6*scale),
-        static_cast<int>(x+4.8*scale),
-        static_cast<int>(y+10.4*scale)
+        static_cast<int>(x+.31*scale),
+        static_cast<int>(y+1.04*scale),
+        static_cast<int>(x+.31*scale),
+        static_cast<int>(y+1.16*scale),
+        static_cast<int>(x+.41*scale),
+        static_cast<int>(y+1.16*scale),
+        static_cast<int>(x+.48*scale),
+        static_cast<int>(y+1.04*scale)
         };
     fillpoly(4, pie_I);
 
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, BLACK);
     int pie_D[] = {
-        static_cast<int>(x+7.2*scale),
-        static_cast<int>(y+10.4*scale),
-        static_cast<int>(x+7.2*scale),
-        static_cast<int>(y+11.6*scale),
-        static_cast<int>(x+8.2*scale),
-        static_cast<int>(y+11.6*scale),
-        static_cast<int>(x+9*scale),
-        static_cast<int>(y+10.4*scale)
+        static_cast<int>(x+.72*scale),
+        static_cast<int>(y+1.04*scale),
+        static_cast<int>(x+.72*scale),
+        static_cast<int>(y+1.16*scale),
+        static_cast<int>(x+.82*scale),
+        static_cast<int>(y+1.16*scale),
+        static_cast<int>(x+.9*scale),
+        static_cast<int>(y+1.04*scale)
         };
     fillpoly(4, pie_D);
 
@@ -820,36 +820,36 @@ void heroe_I(int x,int y)
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, color.DeepPink);
     int hair[] = {
-        static_cast<int>(x+8.4*scale),
-        static_cast<int>(y+8.5*scale),
-        static_cast<int>(x+11.1*scale),
-        static_cast<int>(y+8.6*scale),
-        static_cast<int>(x+11.7*scale),
-        static_cast<int>(y+8*scale),
-        static_cast<int>(x+11.7*scale),
-        static_cast<int>(y+6.7*scale),
-        static_cast<int>(x+10.4*scale),
-        static_cast<int>(y+7.5*scale),
-        static_cast<int>(x+10.1*scale),
-        static_cast<int>(y+5.3*scale),
-        static_cast<int>(x+8.4*scale),
-        static_cast<int>(y+5*scale)
+        static_cast<int>(x+.84*scale),
+        static_cast<int>(y+.85*scale),
+        static_cast<int>(x+1.11*scale),
+        static_cast<int>(y+.86*scale),
+        static_cast<int>(x+1.17*scale),
+        static_cast<int>(y+.8*scale),
+        static_cast<int>(x+1.17*scale),
+        static_cast<int>(y+.67*scale),
+        static_cast<int>(x+1.04*scale),
+        static_cast<int>(y+.75*scale),
+        static_cast<int>(x+1.01*scale),
+        static_cast<int>(y+.53*scale),
+        static_cast<int>(x+.84*scale),
+        static_cast<int>(y+.5*scale)
         };
     fillpoly(7, hair);
 
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, color.DeepPink);
     int hair_d[] = {
-        static_cast<int>(x+2.7*scale),
-        static_cast<int>(y+4.4*scale),
-        static_cast<int>(x+2*scale),
-        static_cast<int>(y+5.3*scale),
-        static_cast<int>(x+2*scale),
-        static_cast<int>(y+6.8*scale),
-        static_cast<int>(x+3.1*scale),
-        static_cast<int>(y+6.8*scale),
-        static_cast<int>(x+3.6*scale),
-        static_cast<int>(y+4.5*scale)
+        static_cast<int>(x+.27*scale),
+        static_cast<int>(y+.44*scale),
+        static_cast<int>(x+.2*scale),
+        static_cast<int>(y+.53*scale),
+        static_cast<int>(x+.2*scale),
+        static_cast<int>(y+.68*scale),
+        static_cast<int>(x+.31*scale),
+        static_cast<int>(y+.68*scale),
+        static_cast<int>(x+.36*scale),
+        static_cast<int>(y+.45*scale)
         };
     fillpoly(5, hair_d);
 
@@ -857,17 +857,17 @@ void heroe_I(int x,int y)
     setcolor(BLACK);
     setlinestyle(0,0,2);
     setfillstyle(SOLID_FILL, color.Wheat);
-    ellipse(x+5.8*scale,y+5.2*scale,360,180,2.7*scale,2.5*scale);
-    getxy(x+5.8*scale,y+5.2*scale,2.7*scale, 180,x1,y1);
-    getxy(x+5.8*scale,y+5.2*scale,2.7*scale, 360,x2,y2);
-    sector(x+5.8*scale,y+5.2*scale,360,180,2.7*scale,2.5*scale);
+    ellipse(x+.58*scale,y+.52*scale,360,180,.27*scale,.25*scale);
+    getxy(x+.58*scale,y+.52*scale,.27*scale, 180,x1,y1);
+    getxy(x+.58*scale,y+.52*scale,.27*scale, 360,x2,y2);
+    sector(x+.58*scale,y+.52*scale,360,180,.27*scale,.25*scale);
     
     setcolor(BLACK);
-    rectangle(x1,y1,x2,y+6.8*scale);
-    bar(x1,y1,x2,y+6.8*scale);
+    rectangle(x1,y1,x2,y+.68*scale);
+    bar(x1,y1,x2,y+.68*scale);
 
     setcolor(color.Wheat);
-    line(x1+0.2,y1,x2-0.2,y2);
+    line(x1+0.02,y1,x2-0.02,y2);
 
     setlinestyle(0,0,0);
 
@@ -875,63 +875,63 @@ void heroe_I(int x,int y)
     //Izquierdo
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, color.DeepPink);
-    rectangle(x+7.6*scale,y+5.2*scale,x+6.7*scale,y+5.6*scale);
-    bar(x+7.6*scale,y+5.2*scale,x+6.7*scale,y+5.6*scale);
+    rectangle(x+.76*scale,y+.52*scale,x+.67*scale,y+.56*scale);
+    bar(x+.76*scale,y+.52*scale,x+.67*scale,y+.56*scale);
 
     setfillstyle(SOLID_FILL, RED);
-    fillellipse(x+6.9*scale,y+6.4*scale,0.2*scale,0.6*scale);
+    fillellipse(x+.69*scale,y+.64*scale,0.02*scale,0.06*scale);
 
     //Derecho
     setfillstyle(SOLID_FILL, color.DeepPink);
-    rectangle(x+3.9*scale,y+5.2*scale,x+3.1*scale,y+5.6*scale);
-    bar(x+3.9*scale,y+5.2*scale,x+3.1*scale,y+5.6*scale);
+    rectangle(x+.39*scale,y+.52*scale,x+.31*scale,y+.56*scale);
+    bar(x+.39*scale,y+.52*scale,x+.31*scale,y+.56*scale);
 
     setfillstyle(SOLID_FILL, RED);
-    fillellipse(x+3.7*scale,y+6.4*scale,0.2*scale,0.6*scale);
+    fillellipse(x+.37*scale,y+.64*scale,0.02*scale,0.06*scale);
 
     //chalina
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, colorM.DarkBrown);
-    rectangle(x+9.9*scale,y+6.8*scale,x+2.1*scale,y+7.6*scale);
-    bar(x+9.9*scale,y+6.8*scale,x+2.1*scale,y+7.6*scale);
+    rectangle(x+.99*scale,y+.68*scale,x+.21*scale,y+.76*scale);
+    bar(x+.99*scale,y+.68*scale,x+.21*scale,y+.76*scale);
 
     setfillstyle(SOLID_FILL, color.HotPink);
-    rectangle(x+9.4*scale,y+7.5*scale,x+2.6*scale,y+8.4*scale);
-    bar(x+9.4*scale,y+7.5*scale,x+2.6*scale,y+8.4*scale);
+    rectangle(x+.94*scale,y+.75*scale,x+.26*scale,y+.84*scale);
+    bar(x+.94*scale,y+.75*scale,x+.26*scale,y+.84*scale);
 
     setfillstyle(SOLID_FILL, color.MediumBlue);
-    bar(x+7.1*scale,y+8.4*scale,x+4.3*scale,y+10.4*scale);
+    bar(x+.71*scale,y+.84*scale,x+.43*scale,y+1.04*scale);
 
     //Capa
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, colorM.DarkBrown);
     int capa_1[] = {
-        static_cast<int>(x+9.4*scale),
-        static_cast<int>(y+8.4*scale),
-        static_cast<int>(x+11.3*scale),
-        static_cast<int>(y+10.4*scale),
-        static_cast<int>(x+6.9*scale),
-        static_cast<int>(y+10.4*scale),
-        static_cast<int>(x+5.9*scale),
-        static_cast<int>(y+9.8*scale),
-        static_cast<int>(x+5.9*scale),
-        static_cast<int>(y+8.4*scale)
+        static_cast<int>(x+.94*scale),
+        static_cast<int>(y+.84*scale),
+        static_cast<int>(x+1.13*scale),
+        static_cast<int>(y+1.04*scale),
+        static_cast<int>(x+.69*scale),
+        static_cast<int>(y+1.04*scale),
+        static_cast<int>(x+.59*scale),
+        static_cast<int>(y+.98*scale),
+        static_cast<int>(x+.59*scale),
+        static_cast<int>(y+.84*scale)
         };
     fillpoly(5, capa_1);
 
     int capa_2[] = {
-        static_cast<int>(x+2.6*scale),
-        static_cast<int>(y+8.4*scale),
-        static_cast<int>(x+1.8*scale),
-        static_cast<int>(y+9.7*scale),
-        static_cast<int>(x+2.7*scale),
-        static_cast<int>(y+10.4*scale),
-        static_cast<int>(x+4.4*scale),
-        static_cast<int>(y+10.4*scale),
-        static_cast<int>(x+4.9*scale),
-        static_cast<int>(y+9.8*scale),
-        static_cast<int>(x+4.9*scale),
-        static_cast<int>(y+8.4*scale)
+        static_cast<int>(x+.26*scale),
+        static_cast<int>(y+.84*scale),
+        static_cast<int>(x+.18*scale),
+        static_cast<int>(y+.97*scale),
+        static_cast<int>(x+.27*scale),
+        static_cast<int>(y+1.04*scale),
+        static_cast<int>(x+.44*scale),
+        static_cast<int>(y+1.04*scale),
+        static_cast<int>(x+.49*scale),
+        static_cast<int>(y+.98*scale),
+        static_cast<int>(x+.49*scale),
+        static_cast<int>(y+.84*scale)
         };
     fillpoly(6, capa_2);
 
@@ -939,58 +939,58 @@ void heroe_I(int x,int y)
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, colorM.DarkBrown);
     int hat[] = {
-        static_cast<int>(x+11.1*scale),
-        static_cast<int>(y+5.5*scale),
-        static_cast<int>(x+8.1*scale),
-        static_cast<int>(y+5*scale),
-        static_cast<int>(x+1.7*scale),
-        static_cast<int>(y+4.4*scale),
-        static_cast<int>(x+0.1*scale),
-        static_cast<int>(y+3.8*scale),
-        static_cast<int>(x+3.6*scale),
-        static_cast<int>(y+2.8*scale),
-        static_cast<int>(x+4.9*scale),
-        static_cast<int>(y+1.5*scale),
-        static_cast<int>(x+5.4*scale),
-        static_cast<int>(y+0.7*scale),
-        static_cast<int>(x+6.4*scale),
-        static_cast<int>(y+0.2*scale),
-        static_cast<int>(x+8.5*scale),
-        static_cast<int>(y+0.2*scale),
-        static_cast<int>(x+10.4*scale),
-        static_cast<int>(y+1.7*scale),
-        static_cast<int>(x+8.6*scale),
-        static_cast<int>(y+1.7*scale),
-        static_cast<int>(x+8.6*scale),
-        static_cast<int>(y+2.7*scale),
-        static_cast<int>(x+9.5*scale),
-        static_cast<int>(y+3.5*scale),
-        static_cast<int>(x+9.9*scale),
-        static_cast<int>(y+4*scale)
+        static_cast<int>(x+1.11*scale),
+        static_cast<int>(y+.55*scale),
+        static_cast<int>(x+.81*scale),
+        static_cast<int>(y+.5*scale),
+        static_cast<int>(x+.17*scale),
+        static_cast<int>(y+.44*scale),
+        static_cast<int>(x+0.01*scale),
+        static_cast<int>(y+.38*scale),
+        static_cast<int>(x+.36*scale),
+        static_cast<int>(y+.28*scale),
+        static_cast<int>(x+.49*scale),
+        static_cast<int>(y+.15*scale),
+        static_cast<int>(x+.54*scale),
+        static_cast<int>(y+0.07*scale),
+        static_cast<int>(x+.64*scale),
+        static_cast<int>(y+0.02*scale),
+        static_cast<int>(x+.85*scale),
+        static_cast<int>(y+0.02*scale),
+        static_cast<int>(x+1.04*scale),
+        static_cast<int>(y+.17*scale),
+        static_cast<int>(x+.86*scale),
+        static_cast<int>(y+.17*scale),
+        static_cast<int>(x+.86*scale),
+        static_cast<int>(y+.27*scale),
+        static_cast<int>(x+.95*scale),
+        static_cast<int>(y+.35*scale),
+        static_cast<int>(x+.99*scale),
+        static_cast<int>(y+.4*scale)
         };
     fillpoly(14, hat);
 
     setcolor(colorM.SaddleBrown);
     setfillstyle(SOLID_FILL, colorM.SaddleBrown);
     int hat_a[] = {
-        static_cast<int>(x+8.8*scale),
-        static_cast<int>(y+4.4*scale),
-        static_cast<int>(x+8.2*scale),
-        static_cast<int>(y+3.5*scale),
-        static_cast<int>(x+7.1*scale),
-        static_cast<int>(y+2.7*scale),
-        static_cast<int>(x+7.6*scale),
+        static_cast<int>(x+.88*scale),
+        static_cast<int>(y+.44*scale),
+        static_cast<int>(x+.82*scale),
+        static_cast<int>(y+.35*scale),
+        static_cast<int>(x+.71*scale),
+        static_cast<int>(y+.27*scale),
+        static_cast<int>(x+.76*scale),
         static_cast<int>(y+scale),
-        static_cast<int>(x+5.8*scale),
-        static_cast<int>(y+1.5*scale),
-        static_cast<int>(x+5.4*scale),
-        static_cast<int>(y+2.5*scale),
-        static_cast<int>(x+4.4*scale),
-        static_cast<int>(y+3.2*scale),
-        static_cast<int>(x+3*scale),
-        static_cast<int>(y+3.6*scale),
-        static_cast<int>(x+5.8*scale),
-        static_cast<int>(y+4*scale)
+        static_cast<int>(x+.58*scale),
+        static_cast<int>(y+.15*scale),
+        static_cast<int>(x+.54*scale),
+        static_cast<int>(y+.25*scale),
+        static_cast<int>(x+.44*scale),
+        static_cast<int>(y+.32*scale),
+        static_cast<int>(x+.3*scale),
+        static_cast<int>(y+.36*scale),
+        static_cast<int>(x+.58*scale),
+        static_cast<int>(y+.4*scale)
         };
     fillpoly(9, hat_a);
 
@@ -999,28 +999,28 @@ void heroe_I(int x,int y)
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, BLACK);
     int pie_I[] = {
-        static_cast<int>(x+9*scale),
-        static_cast<int>(y+10.4*scale),
-        static_cast<int>(x+9*scale),
-        static_cast<int>(y+11.6*scale),
-        static_cast<int>(x+8*scale),
-        static_cast<int>(y+11.6*scale),
-        static_cast<int>(x+7.3*scale),
-        static_cast<int>(y+10.4*scale)
+        static_cast<int>(x+.9*scale),
+        static_cast<int>(y+1.04*scale),
+        static_cast<int>(x+.9*scale),
+        static_cast<int>(y+1.16*scale),
+        static_cast<int>(x+.8*scale),
+        static_cast<int>(y+1.16*scale),
+        static_cast<int>(x+.73*scale),
+        static_cast<int>(y+1.04*scale)
         };
     fillpoly(4, pie_I);
 
     setcolor(BLACK);
     setfillstyle(SOLID_FILL, BLACK);
     int pie_D[] = {
-        static_cast<int>(x+4.9*scale),
-        static_cast<int>(y+10.4*scale),
-        static_cast<int>(x+4.9*scale),
-        static_cast<int>(y+11.6*scale),
-        static_cast<int>(x+3.9*scale),
-        static_cast<int>(y+11.6*scale),
-        static_cast<int>(x+3.1*scale),
-        static_cast<int>(y+10.4*scale)
+        static_cast<int>(x+.49*scale),
+        static_cast<int>(y+1.04*scale),
+        static_cast<int>(x+.49*scale),
+        static_cast<int>(y+1.16*scale),
+        static_cast<int>(x+.39*scale),
+        static_cast<int>(y+1.16*scale),
+        static_cast<int>(x+.31*scale),
+        static_cast<int>(y+1.04*scale)
         };
     fillpoly(4, pie_D);
 
@@ -1028,7 +1028,7 @@ void heroe_I(int x,int y)
 
 	void V(int x,int y){
 		int e = 0.8*m_scale;
-		setfillstyle(1,0);
+		setfillstyle(1,8);
 		bar(x,y,x+e,y+e);
 	}
 
@@ -1041,36 +1041,36 @@ void heroe_I(int x,int y)
 	{
 		int scale = 0.8 * m_scale;
 		setfillstyle(SOLID_FILL, StoneWallPalette().BluishGreen);
-		bar(x, y, x + 9.2 * scale, y + 9.2 * scale);
+		bar(x, y, x + .92 * scale, y + .92 * scale);
 
 		setfillstyle(SOLID_FILL, StoneWallPalette().BrayishBlue);
-		bar(x + 0.8 * scale, y + 0.8 * scale, x + 8.4 * scale, y + 8.4 * scale);
+		bar(x + .08 * scale, y + .08 * scale, x + .84 * scale, y + .84 * scale);
 
 		setfillstyle(SOLID_FILL, StoneWallPalette().DarkBrayishBlue);
-		bar(x + 1.6 * scale, y + 1.6 * scale, x + 7.6 * scale, y + 7.6 * scale);
+		bar(x + .16 * scale, y + .16 * scale, x + .76 * scale, y + .76 * scale);
 
 		setfillstyle(SOLID_FILL, StoneWallPalette().MediumBrayishBlue);
-		bar(x + 2.4 * scale, y + 2.4 * scale, x + 6.8 * scale, y + 6.8 * scale);
+		bar(x + .24 * scale, y + .24 * scale, x + .68 * scale, y + .68 * scale);
 
 		setfillstyle(SOLID_FILL, StoneWallPalette().mLightGray);
-		bar(x + 3.2 * scale, y + 3.2 * scale, x + 6.0 * scale, y + 6.0 * scale);
+		bar(x + .32 * scale, y + .32 * scale, x + .60 * scale, y + .60 * scale);
 
 		setfillstyle(SOLID_FILL, StoneWallPalette().darkGray);
-		bar(x + 9.2 * scale, y, x + 10.0 * scale, y + 10.0 * scale);
-		bar(x, y + 9.2 * scale, x + 10.0 * scale, y + 10.0 * scale);
-		bar(x + 9.2 * scale, y, x + 10.0 * scale, y + 14.0 * scale);
+		bar(x + .92 * scale, y, x + 1.0 * scale, y + 1.0 * scale);
+		bar(x, y + .92 * scale, x + 1.0 * scale, y + 1.0 * scale);
+		bar(x + .92 * scale, y, x + 1.0 * scale, y + 1.4 * scale);
 
 		setfillstyle(SOLID_FILL, StoneWallPalette().vinil);
-		bar(x, y + 10.0 * scale, x + 9.2 * scale, y + 14.0 * scale);
+		bar(x, y + 1.0 * scale, x + .92 * scale, y + 1.4 * scale);
 
 		setfillstyle(SOLID_FILL, StoneWallPalette().darkGray);
-		bar(x + 0.8 * scale, y + 10.8 * scale, x + 8.4 * scale, y + 13.2 * scale);
+		bar(x + 0.08 * scale, y + 1.08 * scale, x + .84 * scale, y + 1.32 * scale);
 
 		setfillstyle(SOLID_FILL, StoneWallPalette().vinil);
-		bar(x + 1.6 * scale, y + 11.2 * scale, x + 7.6 * scale, y + 12.8 * scale);
+		bar(x + .16 * scale, y + 1.12 * scale, x + .76 * scale, y + 1.28 * scale);
 
 		setfillstyle(SOLID_FILL, StoneWallPalette().lightDarkGray);
-		bar(x + 2.4 * scale, y + 11.6 * scale, x + 7.6 * scale, y + 12.8 * scale);
+		bar(x + .24 * scale, y + 1.16 * scale, x + .76 * scale, y + 1.28 * scale);
 	}
 };
 

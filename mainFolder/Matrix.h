@@ -106,18 +106,18 @@ class Juego{
             for(int i=0;i<m.getFilas();i++){
                 for(int j=0;j<m.getColumas();j++){
                     auto base = g.addEntity("base");
-                    base->cShape = std::make_shared<CShape>(xini+j*40,yini+i*40,5,"base");
+                    base->cShape = std::make_shared<CShape>(xini+j*40,yini+i*40,50,"base");
                     if(m.getValor(i,j)==M){
                         auto wall = g.addEntity("wall");
-                        wall->cShape = std::make_shared<CShape>(xini+j*40,yini+i*40,5,"wall");
+                        wall->cShape = std::make_shared<CShape>(xini+j*40,yini+i*40,50,"wall");
                     }
                     if(m.getValor(i,j)==P){
                         auto player = g.addEntity("player");
-                        player->cShape = std::make_shared<CShape>(xini+j*40,yini+i*40,5,"player");
+                        player->cShape = std::make_shared<CShape>(xini+j*40,yini+i*40,50,"player");
                     }
                     if(m.getValor(i,j)==E){
                         auto player = g.addEntity("enemy");
-                        player->cShape = std::make_shared<CShape>(xini+j*40,yini+i*40,5,"enemy");
+                        player->cShape = std::make_shared<CShape>(xini+j*40,yini+i*40,50,"enemy");
                     }
                     // if(m.getValor(i,j)==C){
                     //     g.comida(xini+j*escala,yini+i*escala,escala,COLOR(255,0,0));
