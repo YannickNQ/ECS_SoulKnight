@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Entity.h"
+#include <iostream>
 #include <vector>
 #include <map>
 
@@ -14,56 +15,18 @@ class EntityManager
 	EntityMap m_entityMap;
 	size_t m_totalEntities = 0;
 
-	void removeDeadEntities(EntityVec& vec)
-	{
-		/*vec.erase(std::remove_if(vec.begin, vec.end, [](const std::shared_ptr<Entity>& e) {
-			return !e->isActive();
-			}), vec.end());*/
-	}
+	void removeDeadEntities(EntityVec& vec);
 
 public:
 
-	EntityManager()
-	{
+	EntityManager();
 
-	}
+	void update();
 
-	void update()
-	{
-		for (auto e : m_entitiesToAdd)
-		{
-			m_entities.push_back(e);
-			m_entityMap[e->tag()].push_back(e);
-		}
+	std::shared_ptr<Entity> addEntity(const std::string& tag);
 
-		m_entitiesToAdd.clear();
+	const EntityVec& getEntities();
 
-		removeDeadEntities(m_entities);
-
-		/*for (auto& [tag, entityVec] : m_entityMap)
-		{
-			removeDeadEntities(entityVec)
-		}*/
-	}
-
-	std::shared_ptr<Entity> addEntity(const std::string& tag)
-	{
-		//std::cout <<"hola ...."<<std::endl;
-		auto entity = std::shared_ptr<Entity>(new Entity(m_totalEntities++, tag));
-		m_entitiesToAdd.push_back(entity);
-		update();
-
-		return entity;
-	}
-
-	const EntityVec& getEntities()
-	{
-		return m_entities;
-	}
-
-	const EntityVec& getEntities(const std::string& tag)
-	{
-		return m_entityMap[tag];
-	}
+	const EntityVec& getEntities(const std::string& tag);
 
 };

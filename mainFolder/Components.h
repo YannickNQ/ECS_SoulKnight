@@ -20,10 +20,6 @@ class CShape
 {
 	float m_scale;
 public:
-	CShape(float scale): m_scale(scale)
-	{
-		StoneWall(100,100);
-	}
 	CShape(int x, int y, float scale,std::string tag): m_scale(scale)
 	{
 		if(tag == "wall"){
@@ -46,6 +42,22 @@ public:
 		_y = L * sin(M_PI * alfa / 180) + y;
 	}
 
+	void draw(float x, float y, float a, std::string tag)
+	{
+		if (tag == "wall") {
+			StoneWall(x, y);
+		}
+		else if (tag == "base") {
+			V(x, y);
+		}
+		else if (tag == "player") {
+			knightLeft(x, y);
+		}
+
+		else if (tag == "enemy") {
+			grandSlimeRight(x, y);
+		}
+	}
 	void Player(const Vec2& position, float angle, const std::string& heroType)
 	{
 		/*int x = static_cast<int>(position.x * m_scale);

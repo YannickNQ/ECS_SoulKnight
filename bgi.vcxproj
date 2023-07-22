@@ -71,6 +71,7 @@
     <ClCompile Include="mainFolder\EntityManager.cpp" />
     <ClCompile Include="mainFolder\Game.cpp" />
     <ClCompile Include="mainFolder\main.cpp" />
+    <ClCompile Include="mainFolder\Map.cpp" />
     <ClCompile Include="mainFolder\Matrix.cpp" />
     <ClCompile Include="mainFolder\Vec2.cpp" />
     <ClCompile Include="misc.cxx" />
@@ -88,6 +89,7 @@
     <ClInclude Include="mainFolder\Entity.h" />
     <ClInclude Include="mainFolder\EntityManager.h" />
     <ClInclude Include="mainFolder\Game.h" />
+    <ClInclude Include="mainFolder\Map.h" />
     <ClInclude Include="mainFolder\Matrix.h" />
     <ClInclude Include="mainFolder\Palette.h" />
     <ClInclude Include="mainFolder\Vec2.h" />
