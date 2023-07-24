@@ -18,6 +18,7 @@ void EntityManager::update()
 
 	//remove entities from m_entities by its state
 	removeDeadEntities(m_entities);
+
 }
 
 std::shared_ptr<Entity> EntityManager::addEntity(const std::string& tag)

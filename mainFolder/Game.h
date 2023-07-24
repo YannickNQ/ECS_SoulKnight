@@ -46,7 +46,6 @@ class Game
 	void spawnEnemy();
 	void spawnBullet(std::shared_ptr<Entity> entity, const Vec2& mousePos);
 	void spawnSpecialWeapon(std::shared_ptr<Entity> entity);
-	void setPosGame(Vec2& position);
 
 public:
 	Game(const std::string& config);

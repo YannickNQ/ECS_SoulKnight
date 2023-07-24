@@ -364,7 +364,7 @@ public:
 
 	void grandSlimeRight(int x, int y)
 	{
-		int a = 0, x1, y1, x2, y2, x3, y3, x4, y4;
+		int a = 1, x1, y1, x2, y2, x3, y3, x4, y4;
 		int scale = 0.6 * m_scale;
 
 		setcolor(a);

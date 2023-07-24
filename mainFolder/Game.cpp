@@ -20,9 +20,14 @@ void Game::run()
 	setcurrentwindow(m_window);
 	while (m_running)
 	{
-		sUserInput();
+		m_entities.update();
+
+		sEnemySpawner();
 		sMovement();
+		sCollision();
+		sUserInput();
 		sRender();
+
 		m_currentFrame++;
 	};
 	closegraph();
@@ -109,7 +114,7 @@ void Game::sRender()
 }
 void Game::sEnemySpawner()
 {
-
+	spawnEnemy();
 }
 void Game::sCollision()
 {
@@ -134,6 +139,16 @@ void Game::spawnPlayer()
 }
 void Game::spawnEnemy()
 {
+	auto entity = m_entities.addEntity("enemy");
+
+	float ex = rand() % getwindowwidth();
+	float ey = rand() % getwindowheight();
+
+	entity->cTransform = std::make_shared<CTransform>(Vec2(ex, ey), Vec2(0.0f, 0.0f), 0.0f);
+
+	entity->cShape = std::make_shared<CShape>(entity->cTransform->pos.x, entity->cTransform->pos.y, 50, entity->tag());
+
+	m_lastEnemySpawnTime = m_currentFrame;
 
 }
 void Game::spawnBullet(std::shared_ptr<Entity> entity, const Vec2& mousePos)
