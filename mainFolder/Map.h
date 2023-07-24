@@ -15,7 +15,7 @@ class Map
 public:
 	Map();
 	void setMap(int r, int c);
-	int getRows() const;
-	int getColumns() const;
-	int getValue(int i, int j) const;
+	int getRows();
+	int getColumns();
+	int getValue(int i, int j);
 };

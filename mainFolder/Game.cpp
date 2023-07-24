@@ -11,7 +11,7 @@ void Game::init(const std::string& path)
 	//std::ifstream fin(path);
 
 	m_window = initwindow(1080, 600, "SoulKnight");
-
+	m_map.setMapSize(10, 10);
 	spawnPlayer();
 }
 
@@ -23,9 +23,9 @@ void Game::run()
 		m_entities.update();
 
 		sEnemySpawner();
+		sUserInput();
 		sMovement();
 		sCollision();
-		sUserInput();
 		sRender();
 
 		m_currentFrame++;
@@ -104,6 +104,7 @@ void Game::sAnimation()
 }
 void Game::sRender()
 {
+	//m_map.drawMap(m_entities);
 	cleardevice();
 
 	for (auto e : m_entities.getEntities())

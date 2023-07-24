@@ -2,9 +2,9 @@
 #include "../winbgim.h"
 #include "Entity.h"
 #include "EntityManager.h"
+#include "GameMap.h"
 #include <iostream>
 #include <fstream>
-#include "Map.h"
 
 struct PlayerConfig { int CR; };
 struct EnemyConfig { int CR; };
@@ -14,6 +14,7 @@ struct WeaponConfig { int CR; };
 class Game
 {
 	EntityManager m_entities;
+	GameMap m_map;
 	int m_score = 0;
 	int m_window;
 	int m_currentFrame = 0;
@@ -22,7 +23,6 @@ class Game
 	bool m_running = true;
 	float m_x;
 	float m_y;
-	Map m_map;
 
 	PlayerConfig m_playerConfig;
 	EnemyConfig m_enemyConfig;
