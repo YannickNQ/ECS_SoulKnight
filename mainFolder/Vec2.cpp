@@ -62,6 +62,6 @@ void Vec2::operator /= (const float val)
 float Vec2::dist(const Vec2& rhs) const
 {
 	float dx = x - rhs.x;
-	float dy = y + rhs.y;
+	float dy = y - rhs.y;
 	return sqrt(dx * dx + dy * dy);
 }

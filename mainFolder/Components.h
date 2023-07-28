@@ -10,33 +10,51 @@ class CTransform
 public:
 	Vec2 pos = { 0.0, 0.0 };
 	Vec2 velocity = { 0.0,0.0 };
+	Vec2 prevPos = { 0.0, 0.0 };
+	Vec2 target = { 0.0, 0.0 };
 	float angle = 0;
 
-	CTransform(const Vec2 & p, const Vec2 & v, float a)
-		: pos(p), velocity(v), angle(a) {}
+	CTransform(const Vec2& p, const Vec2& v, float a)
+		: pos(p), prevPos(p), velocity(v), angle(a) {}
+	CTransform(const Vec2& p, const Vec2& v, const Vec2& t)
+		: pos(p), prevPos(p), velocity(v), target(t) {}
 };
 
 class CShape
 {
 	float m_scale;
 public:
+	int height, width;
 	CShape(int x, int y, float scale,std::string tag): m_scale(scale)
 	{
-		if(tag == "wall"){
+		if(tag == "wall")
+		{
 			StoneWall(x,y);
 		}
-		else if(tag == "base"){
+		else if(tag == "base")
+		{
             V(x,y);
         }
-		else if(tag == "player"){
-            knightLeft(x,y);
+		else if(tag == "player")
+		{
+			knightLeft(x, y);
         }
 
-		else if(tag == "enemy"){
+		else if(tag == "enemy")
+		{
             grandSlimeRight(x,y);
         }
+		
+		else if (tag == "bullet")
+		{
+			bulletTest(x, y);
+		}
 	}
-
+	const float getScale() const 
+	{
+		return  m_scale;
+	}
+		
 	void getxy(int x, int y, int L, int alfa, int& _x, int& _y) {
 		_x = L * cos(M_PI * alfa / 180) + x;
 		_y = L * sin(M_PI * alfa / 180) + y;
@@ -57,6 +75,10 @@ public:
 		else if (tag == "enemy") {
 			grandSlimeRight(x, y);
 		}
+		
+		else if (tag == "bullet") {
+			bulletTest(x, y);
+		}
 	}
 	void Player(const Vec2& position, float angle, const std::string& heroType)
 	{
@@ -76,10 +98,133 @@ public:
 			//TODO
 		}
 	}
+	void bulletTest(int x, int y)
+	{
+		setfillstyle(SOLID_FILL, RED);
+		fillellipse(x, y,8, 8);
+	}
 
-	void knightLeft(const float x, const float y)
+	void armaOneRight(int x,int y,int scale)
+	{
+		setfillstyle(SOLID_FILL,0);
+		bar(x+scale,y+2*scale,x+4*scale,y+3.5*scale);
+		setfillstyle(SOLID_FILL,0);
+		bar(x+4*scale,y+scale,x+5*scale,y+4.5*scale);
+		setfillstyle(SOLID_FILL,14);
+		bar(x+5*scale,y+scale,x+6*scale,y+4.5*scale);
+		setfillstyle(SOLID_FILL,15);
+		bar(x+6*scale,y+2*scale,x+15*scale,y+2.75*scale);
+		setfillstyle(SOLID_FILL,15);
+		bar(x+6*scale,y+2.75*scale,x+14*scale,y+3.5*scale);
+	}
+
+	void armaOneLeft(int x,int y,int scale)
+	{
+		setfillstyle(SOLID_FILL,0);
+		bar(x+scale,y+2*scale,x+4*scale,y+3.5*scale);
+		setfillstyle(SOLID_FILL,0);
+		bar(x+4*scale,y+scale,x+5*scale,y+4.5*scale);
+		setfillstyle(SOLID_FILL,14);
+		bar(x+5*scale,y+scale,x+6*scale,y+4.5*scale);
+		setfillstyle(SOLID_FILL,15);
+		bar(x+6*scale,y+2*scale,x+15*scale,y+2.75*scale);
+		setfillstyle(SOLID_FILL,15);
+		bar(x+6*scale,y+2.75*scale,x+14*scale,y+3.5*scale);
+	}
+
+	void armaTwoRight(int x,int y,int scale)
+	{
+		setfillstyle(SOLID_FILL,7);
+		bar(x+scale,y+3*scale,x+2*scale,y+5*scale);
+		setfillstyle(SOLID_FILL,7);
+		bar(x+2*scale,y+2*scale,x+3*scale,y+4*scale);
+		setfillstyle(SOLID_FILL,BLACK);
+		bar(x+3*scale,y+scale,x+9*scale,y+4*scale);
+		setfillstyle(SOLID_FILL,7);
+		bar(x+4*scale,y+2*scale,x+8*scale,y+3*scale);
+	}
+
+	void armaTwoLeft(int x,int y,int scale)
+	{
+		setfillstyle(SOLID_FILL,7);
+		bar(x+scale,y+3*scale,x+2*scale,y+5*scale);
+		setfillstyle(SOLID_FILL,7);
+		bar(x+2*scale,y+2*scale,x+3*scale,y+4*scale);
+		setfillstyle(SOLID_FILL,BLACK);
+		bar(x+3*scale,y+scale,x+9*scale,y+4*scale);
+		setfillstyle(SOLID_FILL,7);
+		bar(x+4*scale,y+2*scale,x+8*scale,y+3*scale);
+	}
+
+	void bulletOne(int x,int y,int scale){
+
+		setlinestyle(SOLID_LINE, 0, 3);
+		setcolor(3);
+		fillellipse(x+scale,y+scale,2.5*scale,2.5*scale);
+		setlinestyle(SOLID_LINE, 0, 3);
+		setcolor(6);
+		fillellipse(x+scale,y+scale,2*scale,2*scale);
+		setlinestyle(SOLID_LINE, 0, 3);
+		setcolor(8);
+		fillellipse(x+scale,y+scale,1.5*scale,1.5*scale);
+
+	}
+	
+	void armaRight(int x, int y) 
 	{
 		float scale = 0.8 * m_scale;
+        int arma_2[] = {
+            static_cast<int>(x+scale),
+            static_cast<int>(y+1.5*scale),
+            static_cast<int>(x+3.5*scale),
+            static_cast<int>(y+1.5*scale),
+            static_cast<int>(x+scale),
+            static_cast<int>(y+4*scale)
+            };
+        fillpoly(3, arma_2);
+        setfillstyle(SOLID_FILL,14);
+        bar(x+2.8*scale,y+scale,x+12*scale,y+3*scale);
+        setfillstyle(SOLID_FILL,14);
+        bar(x+2.8*scale,y+3*scale,x+7*scale,y+5.8*scale);
+        setfillstyle(SOLID_FILL,0);
+        bar(x+4*scale,y+3.2*scale,x+6.8*scale,y+5.2*scale);
+        setfillstyle(SOLID_FILL,0);
+        bar(x+9*scale,y+3*scale,x+10*scale,y+5.2*scale);
+        setfillstyle(SOLID_FILL,0);
+        bar(x+12*scale,y+1.3*scale,x+14*scale,y+1.8*scale);
+    }
+
+    void armaLeft(int x, int y) 
+	{
+		float scale = 0.5 * m_scale;
+		float width = 0;
+        int arma_2[] = {
+            static_cast<int>(x-scale+width),
+            static_cast<int>(y+1.5*scale),
+            static_cast<int>(x-3.5*scale+width),
+            static_cast<int>(y+1.5*scale),
+            static_cast<int>(x-scale+width),
+            static_cast<int>(y+4*scale)
+            };
+        fillpoly(3, arma_2);
+        setfillstyle(SOLID_FILL,14);
+        bar(x-2.8*scale+width,y+scale,x-12*scale+width,y+3*scale);
+        setfillstyle(SOLID_FILL,14);
+        bar(x-2.8*scale+width,y+3*scale,x-7*scale+width,y+5.8*scale);
+        setfillstyle(SOLID_FILL,0);
+        bar(x-4*scale+width,y+3.2*scale,x-6.8*scale+width,y+5.2*scale);
+        setfillstyle(SOLID_FILL,0);
+        bar(x-9*scale+width,y+3*scale,x-10*scale+width,y+5.2*scale);
+        setfillstyle(SOLID_FILL,0);
+        bar(x-12*scale+width,y+1.3*scale,x-14*scale+width,y+1.8*scale);
+    }
+
+	void knightLeft(const float x, const float y) //96x96
+	{
+		float scale = 0.8 * m_scale;
+		width = height = 0.96*scale;
+
+		// rectangle(x, y, x + m_scale, y + m_scale);
 		setfillstyle(SOLID_FILL, BLACK);
 		// Heroe border
 		// casco
@@ -364,7 +509,7 @@ public:
 
 	void grandSlimeRight(int x, int y)
 	{
-		int a = 1, x1, y1, x2, y2, x3, y3, x4, y4;
+		int a = 2, x1, y1, x2, y2, x3, y3, x4, y4;
 		int scale = 0.6 * m_scale;
 
 		setcolor(a);
@@ -409,6 +554,7 @@ public:
 			static_cast<int>(x2),
 			static_cast<int>(y2)
 		};
+		
 		fillpoly(5, ojo_D);
 
 		setcolor(YELLOW);
@@ -599,444 +745,444 @@ public:
 		fillpoly(32, boca);
 	}
 
-void heroe_D(int x,int y)
-{
-	int scale = m_scale;
-    setcolor(0);
-    int x1, y1, x2, y2;
-    colorGeneral color;
-    scale_marron colorM;
+	void witchRight(int x,int y)
+	{
+		int scale = m_scale;
+		setcolor(0);
+		int x1, y1, x2, y2;
+		colorGeneral color;
+		scale_marron colorM;
 
-    //Cabello
+		//Cabello
 
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, color.DeepPink);
-    int hair[] = {
-        static_cast<int>(x+.37*scale),
-        static_cast<int>(y+.85*scale),
-        static_cast<int>(x+.1*scale),
-        static_cast<int>(y+.86*scale),
-        static_cast<int>(x+.04*scale),
-        static_cast<int>(y+.8*scale),
-        static_cast<int>(x+.04*scale),
-        static_cast<int>(y+.67*scale),
-        static_cast<int>(x+.17*scale),
-        static_cast<int>(y+.75*scale),
-        static_cast<int>(x+.2*scale),
-        static_cast<int>(y+.53*scale),
-        static_cast<int>(x+.37*scale),
-        static_cast<int>(y+.5*scale)
-        };
-    fillpoly(7, hair);
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, color.DeepPink);
+		int hair[] = {
+			static_cast<int>(x+.37*scale),
+			static_cast<int>(y+.85*scale),
+			static_cast<int>(x+.1*scale),
+			static_cast<int>(y+.86*scale),
+			static_cast<int>(x+.04*scale),
+			static_cast<int>(y+.8*scale),
+			static_cast<int>(x+.04*scale),
+			static_cast<int>(y+.67*scale),
+			static_cast<int>(x+.17*scale),
+			static_cast<int>(y+.75*scale),
+			static_cast<int>(x+.2*scale),
+			static_cast<int>(y+.53*scale),
+			static_cast<int>(x+.37*scale),
+			static_cast<int>(y+.5*scale)
+			};
+		fillpoly(7, hair);
 
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, color.DeepPink);
-    int hair_d[] = {
-        static_cast<int>(x+.94*scale),
-        static_cast<int>(y+.44*scale),
-        static_cast<int>(x+1.01*scale),
-        static_cast<int>(y+.53*scale),
-        static_cast<int>(x+1.01*scale),
-        static_cast<int>(y+.68*scale),
-        static_cast<int>(x+.9*scale),
-        static_cast<int>(y+.68*scale),
-        static_cast<int>(x+.85*scale),
-        static_cast<int>(y+.45*scale)
-        };
-    fillpoly(5, hair_d);
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, color.DeepPink);
+		int hair_d[] = {
+			static_cast<int>(x+.94*scale),
+			static_cast<int>(y+.44*scale),
+			static_cast<int>(x+1.01*scale),
+			static_cast<int>(y+.53*scale),
+			static_cast<int>(x+1.01*scale),
+			static_cast<int>(y+.68*scale),
+			static_cast<int>(x+.9*scale),
+			static_cast<int>(y+.68*scale),
+			static_cast<int>(x+.85*scale),
+			static_cast<int>(y+.45*scale)
+			};
+		fillpoly(5, hair_d);
 
-    //Cabeza
-    setcolor(BLACK);
-    setlinestyle(0,0,2);
-    setfillstyle(SOLID_FILL, color.Wheat);
-    ellipse(x+.63*scale,y+.52*scale,360,180,.27*scale,.25*scale);
-    getxy(x+.63*scale,y+.52*scale,.27*scale, 180,x1,y1);
-    getxy(x+.63*scale,y+.52*scale,.27*scale, 360,x2,y2);
-    sector(x+.63*scale,y+.52*scale,360,180,.27*scale,.25*scale);
+		//Cabeza
+		setcolor(BLACK);
+		setlinestyle(0,0,2);
+		setfillstyle(SOLID_FILL, color.Wheat);
+		ellipse(x+.63*scale,y+.52*scale,360,180,.27*scale,.25*scale);
+		getxy(x+.63*scale,y+.52*scale,.27*scale, 180,x1,y1);
+		getxy(x+.63*scale,y+.52*scale,.27*scale, 360,x2,y2);
+		sector(x+.63*scale,y+.52*scale,360,180,.27*scale,.25*scale);
     
-    setcolor(BLACK);
-    rectangle(x1,y1,x2,y+.68*scale);
-    bar(x1,y1,x2,y+.68*scale);
+		setcolor(BLACK);
+		rectangle(x1,y1,x2,y+.68*scale);
+		bar(x1,y1,x2,y+.68*scale);
 
-    setcolor(color.Wheat);
-    line(x1+0.02,y1,x2-0.02,y2);
+		setcolor(color.Wheat);
+		line(x1+0.02,y1,x2-0.02,y2);
 
-    setlinestyle(0,0,0);
+		setlinestyle(0,0,0);
 
-     //Ojos
-    //Izquierdo
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, color.DeepPink);
-    rectangle(x+.45*scale,y+.52*scale,x+.54*scale,y+.56*scale);
-    bar(x+.45*scale,y+.52*scale,x+.54*scale,y+.56*scale);
+		 //Ojos
+		//Izquierdo
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, color.DeepPink);
+		rectangle(x+.45*scale,y+.52*scale,x+.54*scale,y+.56*scale);
+		bar(x+.45*scale,y+.52*scale,x+.54*scale,y+.56*scale);
 
-    setfillstyle(SOLID_FILL, RED);
-    fillellipse(x+.52*scale,y+.64*scale,0.02*scale,0.06*scale);
+		setfillstyle(SOLID_FILL, RED);
+		fillellipse(x+.52*scale,y+.64*scale,0.02*scale,0.06*scale);
 
-    //Derecho
-    setfillstyle(SOLID_FILL, color.DeepPink);
-    rectangle(x+.82*scale,y+.52*scale,x+.9*scale,y+.56*scale);
-    bar(x+.82*scale,y+.52*scale,x+.9*scale,y+.56*scale);
+		//Derecho
+		setfillstyle(SOLID_FILL, color.DeepPink);
+		rectangle(x+.82*scale,y+.52*scale,x+.9*scale,y+.56*scale);
+		bar(x+.82*scale,y+.52*scale,x+.9*scale,y+.56*scale);
 
-    setfillstyle(SOLID_FILL, RED);
-    fillellipse(x+.84*scale,y+.64*scale,0.02*scale,0.06*scale);
+		setfillstyle(SOLID_FILL, RED);
+		fillellipse(x+.84*scale,y+.64*scale,0.02*scale,0.06*scale);
 
-    //chalina
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, colorM.DarkBrown);
-    rectangle(x+.22*scale,y+.68*scale,x+.10*scale,y+.76*scale);
-    bar(x+.22*scale,y+.68*scale,x+.10*scale,y+.76*scale);
+		//chalina
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, colorM.DarkBrown);
+		rectangle(x+.22*scale,y+.68*scale,x+.10*scale,y+.76*scale);
+		bar(x+.22*scale,y+.68*scale,x+.10*scale,y+.76*scale);
 
-    setfillstyle(SOLID_FILL, color.HotPink);
-    rectangle(x+.27*scale,y+.75*scale,x+.95*scale,y+.84*scale);
-    bar(x+.27*scale,y+.75*scale,x+.95*scale,y+.84*scale);
+		setfillstyle(SOLID_FILL, color.HotPink);
+		rectangle(x+.27*scale,y+.75*scale,x+.95*scale,y+.84*scale);
+		bar(x+.27*scale,y+.75*scale,x+.95*scale,y+.84*scale);
 
-    setfillstyle(SOLID_FILL, color.MediumBlue);
-    bar(x+.5*scale,y+.84*scale,x+.78*scale,y+1.04*scale);
+		setfillstyle(SOLID_FILL, color.MediumBlue);
+		bar(x+.5*scale,y+.84*scale,x+.78*scale,y+1.04*scale);
 
-    //Capa
+		//Capa
 
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, colorM.DarkBrown);
-    int capa_1[] = {
-        static_cast<int>(x+.27*scale),
-        static_cast<int>(y+.84*scale),
-        static_cast<int>(x+.08*scale),
-        static_cast<int>(y+1.04*scale),
-        static_cast<int>(x+.52*scale),
-        static_cast<int>(y+1.04*scale),
-        static_cast<int>(x+.62*scale),
-        static_cast<int>(y+.98*scale),
-        static_cast<int>(x+.62*scale),
-        static_cast<int>(y+.84*scale)
-        };
-    fillpoly(5, capa_1);
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, colorM.DarkBrown);
+		int capa_1[] = {
+			static_cast<int>(x+.27*scale),
+			static_cast<int>(y+.84*scale),
+			static_cast<int>(x+.08*scale),
+			static_cast<int>(y+1.04*scale),
+			static_cast<int>(x+.52*scale),
+			static_cast<int>(y+1.04*scale),
+			static_cast<int>(x+.62*scale),
+			static_cast<int>(y+.98*scale),
+			static_cast<int>(x+.62*scale),
+			static_cast<int>(y+.84*scale)
+			};
+		fillpoly(5, capa_1);
 
-    int capa_2[] = {
-        static_cast<int>(x+.95*scale),
-        static_cast<int>(y+.84*scale),
-        static_cast<int>(x+1.03*scale),
-        static_cast<int>(y+.97*scale),
-        static_cast<int>(x+.94*scale),
-        static_cast<int>(y+1.04*scale),
-        static_cast<int>(x+.77*scale),
-        static_cast<int>(y+1.04*scale),
-        static_cast<int>(x+.72*scale),
-        static_cast<int>(y+.98*scale),
-        static_cast<int>(x+.72*scale),
-        static_cast<int>(y+.84*scale)
-        };
-    fillpoly(6, capa_2);
+		int capa_2[] = {
+			static_cast<int>(x+.95*scale),
+			static_cast<int>(y+.84*scale),
+			static_cast<int>(x+1.03*scale),
+			static_cast<int>(y+.97*scale),
+			static_cast<int>(x+.94*scale),
+			static_cast<int>(y+1.04*scale),
+			static_cast<int>(x+.77*scale),
+			static_cast<int>(y+1.04*scale),
+			static_cast<int>(x+.72*scale),
+			static_cast<int>(y+.98*scale),
+			static_cast<int>(x+.72*scale),
+			static_cast<int>(y+.84*scale)
+			};
+		fillpoly(6, capa_2);
 
-    //Sombrero
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, colorM.DarkBrown);
-    int hat[] = {
-        static_cast<int>(x+ scale),
-        static_cast<int>(y+ .55*scale),
-        static_cast<int>(x+44*scale),
-        static_cast<int>(y+55*scale),
-        static_cast<int>(x+1.04*scale),
-        static_cast<int>(y+.44*scale),
-        static_cast<int>(x+1.2*scale),
-        static_cast<int>(y+.38*scale),
-        static_cast<int>(x+.85*scale),
-        static_cast<int>(y+.28*scale),
-        static_cast<int>(x+.72*scale),
-        static_cast<int>(y+.15*scale),
-        static_cast<int>(x+.67*scale),
-        static_cast<int>(y+.07*scale),
-        static_cast<int>(x+.57*scale),
-        static_cast<int>(y+.02*scale),
-        static_cast<int>(x+.36*scale),
-        static_cast<int>(y+.02*scale),
-        static_cast<int>(x+.17*scale),
-        static_cast<int>(y+.17*scale),
-        static_cast<int>(x+.35*scale),
-        static_cast<int>(y+.17*scale),
-        static_cast<int>(x+.35*scale),
-        static_cast<int>(y+.27*scale),
-        static_cast<int>(x+.26*scale),
-        static_cast<int>(y+.35*scale),
-        static_cast<int>(x+.22*scale),
-        static_cast<int>(y+.4*scale)
-        };
-    fillpoly(14, hat);
+		//Sombrero
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, colorM.DarkBrown);
+		int hat[] = {
+			static_cast<int>(x+ scale),
+			static_cast<int>(y+ .55*scale),
+			static_cast<int>(x+44*scale),
+			static_cast<int>(y+55*scale),
+			static_cast<int>(x+1.04*scale),
+			static_cast<int>(y+.44*scale),
+			static_cast<int>(x+1.2*scale),
+			static_cast<int>(y+.38*scale),
+			static_cast<int>(x+.85*scale),
+			static_cast<int>(y+.28*scale),
+			static_cast<int>(x+.72*scale),
+			static_cast<int>(y+.15*scale),
+			static_cast<int>(x+.67*scale),
+			static_cast<int>(y+.07*scale),
+			static_cast<int>(x+.57*scale),
+			static_cast<int>(y+.02*scale),
+			static_cast<int>(x+.36*scale),
+			static_cast<int>(y+.02*scale),
+			static_cast<int>(x+.17*scale),
+			static_cast<int>(y+.17*scale),
+			static_cast<int>(x+.35*scale),
+			static_cast<int>(y+.17*scale),
+			static_cast<int>(x+.35*scale),
+			static_cast<int>(y+.27*scale),
+			static_cast<int>(x+.26*scale),
+			static_cast<int>(y+.35*scale),
+			static_cast<int>(x+.22*scale),
+			static_cast<int>(y+.4*scale)
+			};
+		fillpoly(14, hat);
 
-    setcolor(colorM.SaddleBrown);
-    setfillstyle(SOLID_FILL, colorM.SaddleBrown);
-    int hat_a[] = {
-        static_cast<int>(x+.33*scale),
-        static_cast<int>(y+.44*scale),
-        static_cast<int>(x+.39*scale),
-        static_cast<int>(y+.35*scale),
-        static_cast<int>(x+.5*scale),
-        static_cast<int>(y+.27*scale),
-        static_cast<int>(x+.45*scale),
-        static_cast<int>(y+scale),
-        static_cast<int>(x+.63*scale),
-        static_cast<int>(y+.15*scale),
-        static_cast<int>(x+.67*scale),
-        static_cast<int>(y+.25*scale),
-        static_cast<int>(x+.77*scale),
-        static_cast<int>(y+.32*scale),
-        static_cast<int>(x+.91*scale),
-        static_cast<int>(y+.36*scale),
-        static_cast<int>(x+.63*scale),
-        static_cast<int>(y+.4*scale)
-        };
-    fillpoly(9, hat_a);
+		setcolor(colorM.SaddleBrown);
+		setfillstyle(SOLID_FILL, colorM.SaddleBrown);
+		int hat_a[] = {
+			static_cast<int>(x+.33*scale),
+			static_cast<int>(y+.44*scale),
+			static_cast<int>(x+.39*scale),
+			static_cast<int>(y+.35*scale),
+			static_cast<int>(x+.5*scale),
+			static_cast<int>(y+.27*scale),
+			static_cast<int>(x+.45*scale),
+			static_cast<int>(y+scale),
+			static_cast<int>(x+.63*scale),
+			static_cast<int>(y+.15*scale),
+			static_cast<int>(x+.67*scale),
+			static_cast<int>(y+.25*scale),
+			static_cast<int>(x+.77*scale),
+			static_cast<int>(y+.32*scale),
+			static_cast<int>(x+.91*scale),
+			static_cast<int>(y+.36*scale),
+			static_cast<int>(x+.63*scale),
+			static_cast<int>(y+.4*scale)
+			};
+		fillpoly(9, hat_a);
 
 
-    // Pie
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, BLACK);
-    int pie_I[] = {
-        static_cast<int>(x+.31*scale),
-        static_cast<int>(y+1.04*scale),
-        static_cast<int>(x+.31*scale),
-        static_cast<int>(y+1.16*scale),
-        static_cast<int>(x+.41*scale),
-        static_cast<int>(y+1.16*scale),
-        static_cast<int>(x+.48*scale),
-        static_cast<int>(y+1.04*scale)
-        };
-    fillpoly(4, pie_I);
+		// Pie
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, BLACK);
+		int pie_I[] = {
+			static_cast<int>(x+.31*scale),
+			static_cast<int>(y+1.04*scale),
+			static_cast<int>(x+.31*scale),
+			static_cast<int>(y+1.16*scale),
+			static_cast<int>(x+.41*scale),
+			static_cast<int>(y+1.16*scale),
+			static_cast<int>(x+.48*scale),
+			static_cast<int>(y+1.04*scale)
+			};
+		fillpoly(4, pie_I);
 
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, BLACK);
-    int pie_D[] = {
-        static_cast<int>(x+.72*scale),
-        static_cast<int>(y+1.04*scale),
-        static_cast<int>(x+.72*scale),
-        static_cast<int>(y+1.16*scale),
-        static_cast<int>(x+.82*scale),
-        static_cast<int>(y+1.16*scale),
-        static_cast<int>(x+.9*scale),
-        static_cast<int>(y+1.04*scale)
-        };
-    fillpoly(4, pie_D);
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, BLACK);
+		int pie_D[] = {
+			static_cast<int>(x+.72*scale),
+			static_cast<int>(y+1.04*scale),
+			static_cast<int>(x+.72*scale),
+			static_cast<int>(y+1.16*scale),
+			static_cast<int>(x+.82*scale),
+			static_cast<int>(y+1.16*scale),
+			static_cast<int>(x+.9*scale),
+			static_cast<int>(y+1.04*scale)
+			};
+		fillpoly(4, pie_D);
 
-}
+	}
 
-void heroe_I(int x,int y)
-{
-	int scale = m_scale;
-    setcolor(0);
-    int x1, y1, x2, y2;
-    colorGeneral color;
-    scale_marron colorM;
+	void witchLeft(int x,int y)
+	{
+		int scale = m_scale;
+		setcolor(0);
+		int x1, y1, x2, y2;
+		colorGeneral color;
+		scale_marron colorM;
 
-    //Cabello
+		//Cabello
 
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, color.DeepPink);
-    int hair[] = {
-        static_cast<int>(x+.84*scale),
-        static_cast<int>(y+.85*scale),
-        static_cast<int>(x+1.11*scale),
-        static_cast<int>(y+.86*scale),
-        static_cast<int>(x+1.17*scale),
-        static_cast<int>(y+.8*scale),
-        static_cast<int>(x+1.17*scale),
-        static_cast<int>(y+.67*scale),
-        static_cast<int>(x+1.04*scale),
-        static_cast<int>(y+.75*scale),
-        static_cast<int>(x+1.01*scale),
-        static_cast<int>(y+.53*scale),
-        static_cast<int>(x+.84*scale),
-        static_cast<int>(y+.5*scale)
-        };
-    fillpoly(7, hair);
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, color.DeepPink);
+		int hair[] = {
+			static_cast<int>(x+.84*scale),
+			static_cast<int>(y+.85*scale),
+			static_cast<int>(x+1.11*scale),
+			static_cast<int>(y+.86*scale),
+			static_cast<int>(x+1.17*scale),
+			static_cast<int>(y+.8*scale),
+			static_cast<int>(x+1.17*scale),
+			static_cast<int>(y+.67*scale),
+			static_cast<int>(x+1.04*scale),
+			static_cast<int>(y+.75*scale),
+			static_cast<int>(x+1.01*scale),
+			static_cast<int>(y+.53*scale),
+			static_cast<int>(x+.84*scale),
+			static_cast<int>(y+.5*scale)
+			};
+		fillpoly(7, hair);
 
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, color.DeepPink);
-    int hair_d[] = {
-        static_cast<int>(x+.27*scale),
-        static_cast<int>(y+.44*scale),
-        static_cast<int>(x+.2*scale),
-        static_cast<int>(y+.53*scale),
-        static_cast<int>(x+.2*scale),
-        static_cast<int>(y+.68*scale),
-        static_cast<int>(x+.31*scale),
-        static_cast<int>(y+.68*scale),
-        static_cast<int>(x+.36*scale),
-        static_cast<int>(y+.45*scale)
-        };
-    fillpoly(5, hair_d);
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, color.DeepPink);
+		int hair_d[] = {
+			static_cast<int>(x+.27*scale),
+			static_cast<int>(y+.44*scale),
+			static_cast<int>(x+.2*scale),
+			static_cast<int>(y+.53*scale),
+			static_cast<int>(x+.2*scale),
+			static_cast<int>(y+.68*scale),
+			static_cast<int>(x+.31*scale),
+			static_cast<int>(y+.68*scale),
+			static_cast<int>(x+.36*scale),
+			static_cast<int>(y+.45*scale)
+			};
+		fillpoly(5, hair_d);
 
-    //Cabeza
-    setcolor(BLACK);
-    setlinestyle(0,0,2);
-    setfillstyle(SOLID_FILL, color.Wheat);
-    ellipse(x+.58*scale,y+.52*scale,360,180,.27*scale,.25*scale);
-    getxy(x+.58*scale,y+.52*scale,.27*scale, 180,x1,y1);
-    getxy(x+.58*scale,y+.52*scale,.27*scale, 360,x2,y2);
-    sector(x+.58*scale,y+.52*scale,360,180,.27*scale,.25*scale);
+		//Cabeza
+		setcolor(BLACK);
+		setlinestyle(0,0,2);
+		setfillstyle(SOLID_FILL, color.Wheat);
+		ellipse(x+.58*scale,y+.52*scale,360,180,.27*scale,.25*scale);
+		getxy(x+.58*scale,y+.52*scale,.27*scale, 180,x1,y1);
+		getxy(x+.58*scale,y+.52*scale,.27*scale, 360,x2,y2);
+		sector(x+.58*scale,y+.52*scale,360,180,.27*scale,.25*scale);
     
-    setcolor(BLACK);
-    rectangle(x1,y1,x2,y+.68*scale);
-    bar(x1,y1,x2,y+.68*scale);
+		setcolor(BLACK);
+		rectangle(x1,y1,x2,y+.68*scale);
+		bar(x1,y1,x2,y+.68*scale);
 
-    setcolor(color.Wheat);
-    line(x1+0.02,y1,x2-0.02,y2);
+		setcolor(color.Wheat);
+		line(x1+0.02,y1,x2-0.02,y2);
 
-    setlinestyle(0,0,0);
+		setlinestyle(0,0,0);
 
-     //Ojos
-    //Izquierdo
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, color.DeepPink);
-    rectangle(x+.76*scale,y+.52*scale,x+.67*scale,y+.56*scale);
-    bar(x+.76*scale,y+.52*scale,x+.67*scale,y+.56*scale);
+		 //Ojos
+		//Izquierdo
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, color.DeepPink);
+		rectangle(x+.76*scale,y+.52*scale,x+.67*scale,y+.56*scale);
+		bar(x+.76*scale,y+.52*scale,x+.67*scale,y+.56*scale);
 
-    setfillstyle(SOLID_FILL, RED);
-    fillellipse(x+.69*scale,y+.64*scale,0.02*scale,0.06*scale);
+		setfillstyle(SOLID_FILL, RED);
+		fillellipse(x+.69*scale,y+.64*scale,0.02*scale,0.06*scale);
 
-    //Derecho
-    setfillstyle(SOLID_FILL, color.DeepPink);
-    rectangle(x+.39*scale,y+.52*scale,x+.31*scale,y+.56*scale);
-    bar(x+.39*scale,y+.52*scale,x+.31*scale,y+.56*scale);
+		//Derecho
+		setfillstyle(SOLID_FILL, color.DeepPink);
+		rectangle(x+.39*scale,y+.52*scale,x+.31*scale,y+.56*scale);
+		bar(x+.39*scale,y+.52*scale,x+.31*scale,y+.56*scale);
 
-    setfillstyle(SOLID_FILL, RED);
-    fillellipse(x+.37*scale,y+.64*scale,0.02*scale,0.06*scale);
+		setfillstyle(SOLID_FILL, RED);
+		fillellipse(x+.37*scale,y+.64*scale,0.02*scale,0.06*scale);
 
-    //chalina
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, colorM.DarkBrown);
-    rectangle(x+.99*scale,y+.68*scale,x+.21*scale,y+.76*scale);
-    bar(x+.99*scale,y+.68*scale,x+.21*scale,y+.76*scale);
+		//chalina
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, colorM.DarkBrown);
+		rectangle(x+.99*scale,y+.68*scale,x+.21*scale,y+.76*scale);
+		bar(x+.99*scale,y+.68*scale,x+.21*scale,y+.76*scale);
 
-    setfillstyle(SOLID_FILL, color.HotPink);
-    rectangle(x+.94*scale,y+.75*scale,x+.26*scale,y+.84*scale);
-    bar(x+.94*scale,y+.75*scale,x+.26*scale,y+.84*scale);
+		setfillstyle(SOLID_FILL, color.HotPink);
+		rectangle(x+.94*scale,y+.75*scale,x+.26*scale,y+.84*scale);
+		bar(x+.94*scale,y+.75*scale,x+.26*scale,y+.84*scale);
 
-    setfillstyle(SOLID_FILL, color.MediumBlue);
-    bar(x+.71*scale,y+.84*scale,x+.43*scale,y+1.04*scale);
+		setfillstyle(SOLID_FILL, color.MediumBlue);
+		bar(x+.71*scale,y+.84*scale,x+.43*scale,y+1.04*scale);
 
-    //Capa
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, colorM.DarkBrown);
-    int capa_1[] = {
-        static_cast<int>(x+.94*scale),
-        static_cast<int>(y+.84*scale),
-        static_cast<int>(x+1.13*scale),
-        static_cast<int>(y+1.04*scale),
-        static_cast<int>(x+.69*scale),
-        static_cast<int>(y+1.04*scale),
-        static_cast<int>(x+.59*scale),
-        static_cast<int>(y+.98*scale),
-        static_cast<int>(x+.59*scale),
-        static_cast<int>(y+.84*scale)
-        };
-    fillpoly(5, capa_1);
+		//Capa
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, colorM.DarkBrown);
+		int capa_1[] = {
+			static_cast<int>(x+.94*scale),
+			static_cast<int>(y+.84*scale),
+			static_cast<int>(x+1.13*scale),
+			static_cast<int>(y+1.04*scale),
+			static_cast<int>(x+.69*scale),
+			static_cast<int>(y+1.04*scale),
+			static_cast<int>(x+.59*scale),
+			static_cast<int>(y+.98*scale),
+			static_cast<int>(x+.59*scale),
+			static_cast<int>(y+.84*scale)
+			};
+		fillpoly(5, capa_1);
 
-    int capa_2[] = {
-        static_cast<int>(x+.26*scale),
-        static_cast<int>(y+.84*scale),
-        static_cast<int>(x+.18*scale),
-        static_cast<int>(y+.97*scale),
-        static_cast<int>(x+.27*scale),
-        static_cast<int>(y+1.04*scale),
-        static_cast<int>(x+.44*scale),
-        static_cast<int>(y+1.04*scale),
-        static_cast<int>(x+.49*scale),
-        static_cast<int>(y+.98*scale),
-        static_cast<int>(x+.49*scale),
-        static_cast<int>(y+.84*scale)
-        };
-    fillpoly(6, capa_2);
+		int capa_2[] = {
+			static_cast<int>(x+.26*scale),
+			static_cast<int>(y+.84*scale),
+			static_cast<int>(x+.18*scale),
+			static_cast<int>(y+.97*scale),
+			static_cast<int>(x+.27*scale),
+			static_cast<int>(y+1.04*scale),
+			static_cast<int>(x+.44*scale),
+			static_cast<int>(y+1.04*scale),
+			static_cast<int>(x+.49*scale),
+			static_cast<int>(y+.98*scale),
+			static_cast<int>(x+.49*scale),
+			static_cast<int>(y+.84*scale)
+			};
+		fillpoly(6, capa_2);
 
-    //Sombrero
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, colorM.DarkBrown);
-    int hat[] = {
-        static_cast<int>(x+1.11*scale),
-        static_cast<int>(y+.55*scale),
-        static_cast<int>(x+.81*scale),
-        static_cast<int>(y+.5*scale),
-        static_cast<int>(x+.17*scale),
-        static_cast<int>(y+.44*scale),
-        static_cast<int>(x+0.01*scale),
-        static_cast<int>(y+.38*scale),
-        static_cast<int>(x+.36*scale),
-        static_cast<int>(y+.28*scale),
-        static_cast<int>(x+.49*scale),
-        static_cast<int>(y+.15*scale),
-        static_cast<int>(x+.54*scale),
-        static_cast<int>(y+0.07*scale),
-        static_cast<int>(x+.64*scale),
-        static_cast<int>(y+0.02*scale),
-        static_cast<int>(x+.85*scale),
-        static_cast<int>(y+0.02*scale),
-        static_cast<int>(x+1.04*scale),
-        static_cast<int>(y+.17*scale),
-        static_cast<int>(x+.86*scale),
-        static_cast<int>(y+.17*scale),
-        static_cast<int>(x+.86*scale),
-        static_cast<int>(y+.27*scale),
-        static_cast<int>(x+.95*scale),
-        static_cast<int>(y+.35*scale),
-        static_cast<int>(x+.99*scale),
-        static_cast<int>(y+.4*scale)
-        };
-    fillpoly(14, hat);
+		//Sombrero
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, colorM.DarkBrown);
+		int hat[] = {
+			static_cast<int>(x+1.11*scale),
+			static_cast<int>(y+.55*scale),
+			static_cast<int>(x+.81*scale),
+			static_cast<int>(y+.5*scale),
+			static_cast<int>(x+.17*scale),
+			static_cast<int>(y+.44*scale),
+			static_cast<int>(x+0.01*scale),
+			static_cast<int>(y+.38*scale),
+			static_cast<int>(x+.36*scale),
+			static_cast<int>(y+.28*scale),
+			static_cast<int>(x+.49*scale),
+			static_cast<int>(y+.15*scale),
+			static_cast<int>(x+.54*scale),
+			static_cast<int>(y+0.07*scale),
+			static_cast<int>(x+.64*scale),
+			static_cast<int>(y+0.02*scale),
+			static_cast<int>(x+.85*scale),
+			static_cast<int>(y+0.02*scale),
+			static_cast<int>(x+1.04*scale),
+			static_cast<int>(y+.17*scale),
+			static_cast<int>(x+.86*scale),
+			static_cast<int>(y+.17*scale),
+			static_cast<int>(x+.86*scale),
+			static_cast<int>(y+.27*scale),
+			static_cast<int>(x+.95*scale),
+			static_cast<int>(y+.35*scale),
+			static_cast<int>(x+.99*scale),
+			static_cast<int>(y+.4*scale)
+			};
+		fillpoly(14, hat);
 
-    setcolor(colorM.SaddleBrown);
-    setfillstyle(SOLID_FILL, colorM.SaddleBrown);
-    int hat_a[] = {
-        static_cast<int>(x+.88*scale),
-        static_cast<int>(y+.44*scale),
-        static_cast<int>(x+.82*scale),
-        static_cast<int>(y+.35*scale),
-        static_cast<int>(x+.71*scale),
-        static_cast<int>(y+.27*scale),
-        static_cast<int>(x+.76*scale),
-        static_cast<int>(y+scale),
-        static_cast<int>(x+.58*scale),
-        static_cast<int>(y+.15*scale),
-        static_cast<int>(x+.54*scale),
-        static_cast<int>(y+.25*scale),
-        static_cast<int>(x+.44*scale),
-        static_cast<int>(y+.32*scale),
-        static_cast<int>(x+.3*scale),
-        static_cast<int>(y+.36*scale),
-        static_cast<int>(x+.58*scale),
-        static_cast<int>(y+.4*scale)
-        };
-    fillpoly(9, hat_a);
+		setcolor(colorM.SaddleBrown);
+		setfillstyle(SOLID_FILL, colorM.SaddleBrown);
+		int hat_a[] = {
+			static_cast<int>(x+.88*scale),
+			static_cast<int>(y+.44*scale),
+			static_cast<int>(x+.82*scale),
+			static_cast<int>(y+.35*scale),
+			static_cast<int>(x+.71*scale),
+			static_cast<int>(y+.27*scale),
+			static_cast<int>(x+.76*scale),
+			static_cast<int>(y+scale),
+			static_cast<int>(x+.58*scale),
+			static_cast<int>(y+.15*scale),
+			static_cast<int>(x+.54*scale),
+			static_cast<int>(y+.25*scale),
+			static_cast<int>(x+.44*scale),
+			static_cast<int>(y+.32*scale),
+			static_cast<int>(x+.3*scale),
+			static_cast<int>(y+.36*scale),
+			static_cast<int>(x+.58*scale),
+			static_cast<int>(y+.4*scale)
+			};
+		fillpoly(9, hat_a);
 
 
-    // Pie
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, BLACK);
-    int pie_I[] = {
-        static_cast<int>(x+.9*scale),
-        static_cast<int>(y+1.04*scale),
-        static_cast<int>(x+.9*scale),
-        static_cast<int>(y+1.16*scale),
-        static_cast<int>(x+.8*scale),
-        static_cast<int>(y+1.16*scale),
-        static_cast<int>(x+.73*scale),
-        static_cast<int>(y+1.04*scale)
-        };
-    fillpoly(4, pie_I);
+		// Pie
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, BLACK);
+		int pie_I[] = {
+			static_cast<int>(x+.9*scale),
+			static_cast<int>(y+1.04*scale),
+			static_cast<int>(x+.9*scale),
+			static_cast<int>(y+1.16*scale),
+			static_cast<int>(x+.8*scale),
+			static_cast<int>(y+1.16*scale),
+			static_cast<int>(x+.73*scale),
+			static_cast<int>(y+1.04*scale)
+			};
+		fillpoly(4, pie_I);
 
-    setcolor(BLACK);
-    setfillstyle(SOLID_FILL, BLACK);
-    int pie_D[] = {
-        static_cast<int>(x+.49*scale),
-        static_cast<int>(y+1.04*scale),
-        static_cast<int>(x+.49*scale),
-        static_cast<int>(y+1.16*scale),
-        static_cast<int>(x+.39*scale),
-        static_cast<int>(y+1.16*scale),
-        static_cast<int>(x+.31*scale),
-        static_cast<int>(y+1.04*scale)
-        };
-    fillpoly(4, pie_D);
+		setcolor(BLACK);
+		setfillstyle(SOLID_FILL, BLACK);
+		int pie_D[] = {
+			static_cast<int>(x+.49*scale),
+			static_cast<int>(y+1.04*scale),
+			static_cast<int>(x+.49*scale),
+			static_cast<int>(y+1.16*scale),
+			static_cast<int>(x+.39*scale),
+			static_cast<int>(y+1.16*scale),
+			static_cast<int>(x+.31*scale),
+			static_cast<int>(y+1.04*scale)
+			};
+		fillpoly(4, pie_D);
 
-}
+	}
 
 	void V(int x,int y){
 		int e = 0.8*m_scale;
@@ -1084,6 +1230,7 @@ void heroe_I(int x,int y)
 		setfillstyle(SOLID_FILL, StoneWallPalette().lightDarkGray);
 		bar(x + .24 * scale, y + 1.16 * scale, x + .76 * scale, y + 1.28 * scale);
 	}
+
 };
 
 class CCollision

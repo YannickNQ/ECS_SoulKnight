@@ -3,7 +3,7 @@
 
 #define M 100
 #define P 200
-#define C 300
+#define B 300
 #define T 400
 #define E 500
 
@@ -15,7 +15,7 @@ class Map
 public:
 	Map();
 	void setMap(int r, int c);
-	int getRows();
-	int getColumns();
-	int getValue(int i, int j);
+	int getRows() const;
+	int getColumns() const;
+	int getValue(int i, int j) const;
 };

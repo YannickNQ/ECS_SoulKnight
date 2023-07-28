@@ -1,5 +1,5 @@
 #pragma once
-
+#include <iostream>
 #include "Components.h"
 #include <memory>
 #include <string>
@@ -25,7 +25,7 @@ public:
 
 	//private member access functions
 	bool isActive() const { return m_active; }
-	const std::string& tag() const { return m_tag; }
+	const std::string tag() const { return m_tag; }
 	const size_t id() const { return m_id; }
 	void destroy() { m_active = false; }
 };

@@ -3,7 +3,13 @@ EntityManager::EntityManager()
 {
 
 }
-
+void EntityManager::removeDeadEntities()
+{
+	m_entities.erase(std::remove_if(m_entities.begin(), m_entities.end(), [](const std::shared_ptr<Entity>& e)
+		{
+			return !e->isActive();
+		}), m_entities.end());
+}
 void EntityManager::update() 
 {
 	//Add entities from m_entitiesToAdd to m_entities
@@ -18,7 +24,6 @@ void EntityManager::update()
 
 	//remove entities from m_entities by its state
 	removeDeadEntities(m_entities);
-
 }
 
 std::shared_ptr<Entity> EntityManager::addEntity(const std::string& tag)
